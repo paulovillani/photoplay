@@ -31,7 +31,8 @@
 			padding: 0;
 		}
 		#header_menu li{
-			display: inline-block;
+			display: inline;
+			float: left;
 		}
 		h1{
 			font-size: 38px;
@@ -43,6 +44,7 @@
 			font-size: 14px;
 			font-family: 'Lato', sans-serif;
 			font-weight: 900;
+			color: white;
 		}
 
 	</style>
@@ -58,9 +60,9 @@
 					<ul>
 						<li><img src="{{STATIC_URL}}img/logo.png"></li>
 						<li><h2>Produtos</h2></li>
-						<li>Blog</li>
-						<li>Contato</li>
-						<li>Solicitar Orçamento</li>
+						<li><h2>Blog</h2></li>
+						<li><h2>Contato</h2></li>
+						<li style="float:right;"><h2>Solicitar Orçamento</h2></li>
 					</ul>
 				</div>
 				<div id="header_banner">
