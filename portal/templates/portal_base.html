@@ -4,15 +4,14 @@
 <head>
 	<title> {% block title %} {% endblock %} </title>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link href='http://fonts.googleapis.com/css?family=Lato|Montserrat' rel='stylesheet' type='text/css'>
 	<style type="text/css">
 		#header{
 			width: 1400px;
-			background-image:url("{{STATIC_URL}}img/banner.png");
-		}
+			}
 
 		#header_container{
 			width: 1000px;
-
 		}
 		#content{
 			left: 50%;
@@ -26,6 +25,13 @@
 		#header_menu li{
 			display: inline-block;
 		}
+		h1{
+			font-size: 38px;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+
+		}
+
 	</style>
 	{% block head %} {% endblock %}
 </head>
@@ -38,10 +44,10 @@
 				<div id="header_menu">
 					<ul>
 						<li><img src="{{STATIC_URL}}img/logo.png"></li>
-						<li>produtos</li>
-						<li>blog</li>
-						<li>contato</li>
-						<li>solicitar orçamento</li>
+						<li><h1 style=" font-size: 50px;">Produtos</h1></li>
+						<li>Blog</li>
+						<li>Contato</li>
+						<li>Solicitar Orçamento</li>
 					</ul>
 				</div>
 				<div id="header_banner">
