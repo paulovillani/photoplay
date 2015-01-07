@@ -4,7 +4,27 @@
 <head>
 	<title> {% block title %} {% endblock %} </title>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<style type="text/css">
+		#header{
+			width: 1400px;
+		}
 
+		#header_container{
+			width: 1000px;
+		}
+		#content{
+			left: 50%;
+			margin-left: -720px;
+			position: absolute;
+			width: 1400px;
+		}
+		#header_menu ul{
+			list-style: outside none none;
+		}
+		#header_menu li{
+			display: inline-block;
+		}
+	</style>
 	{% block head %} {% endblock %}
 </head>
 
@@ -12,7 +32,20 @@
 	{% block body %} {% endblock %}
 	<div id="content">
 		<div id="header">
-		
+			<div id="header_container">
+				<div id="header_menu">
+					<ul>
+						<li><img src="{{STATIC_URL}}img/logo.png"></li>
+						<li>produtos</li>
+						<li>blog</li>
+						<li>contato</li>
+						<li>solicitar orçamento</li>
+					</ul>
+				</div>
+				<div id="header_banner">
+					
+				</div>
+			</div>
 		</div>
 		
 		<div id="corpo">
