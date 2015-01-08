@@ -27,12 +27,15 @@
 		}
 		#header_menu ul{
 			list-style: outside none none;
-			margin: 0;
+			margin: 25px 0 0;
 			padding: 0;
 		}
 		#header_menu li{
 			display: inline;
 			float: left;
+		}
+		#header_menu h2{
+			margin: 10px 30px 0
 		}
 		h1{
 			font-size: 38px;
@@ -45,6 +48,21 @@
 			font-family: 'Lato', sans-serif;
 			font-weight: 900;
 			color: white;
+		}
+		#header_menu input[type="button"]{
+			background: none repeat scroll 0 0 rgba(198, 198, 198, 0.35);
+			border: 2px solid white;
+			border-radius: 10px;
+			color: white;
+			font-family: "Montserrat",sans-serif;
+			font-size: 11px;
+			font-weight: 900;
+			height: 40px;
+			width: 210px;
+		}
+		#header_menu input[type="button"]:active{
+			background: none repeat scroll 0 0 rgba(33, 63, 154, 0.65);
+			display: block;
 		}
 
 	</style>
@@ -59,10 +77,10 @@
 				<div id="header_menu">
 					<ul>
 						<li><img src="{{STATIC_URL}}img/logo.png"></li>
-						<li><h2>Produtos</h2></li>
+						<li style="margin-left: 25px;"><h2>Produtos</h2></li>
 						<li><h2>Blog</h2></li>
 						<li><h2>Contato</h2></li>
-						<li style="float:right;"><h2>Solicitar Orçamento</h2></li>
+						<li style="float:right;"><input type="button" value="SOLICITAR ORÇAMENTO"></li>
 					</ul>
 				</div>
 				<div id="header_banner">
