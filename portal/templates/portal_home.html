@@ -7,11 +7,61 @@
 
 
 {% block head %}
+<style type="text/css">
+	#c_personalizado{
+		width: 1000px;
+		position: absolute;
+		left: 50%;
+		margin-left: -500px;
+		height:  550px;
+		background-color: white;
 
+	}
+	#text_personalizado{
+		float: left;
+		width: 620px;
+		margin-top: 160px
+		
+
+	}
+	#text_personalizado h1{
+		margin: 0;
+		font-style: uppercase;
+	}
+    #img_personalizado{
+    	width: 320px;
+    	float: left;
+    	margin: 0;
+    	margin-top: 100px;
+
+    }
+     #img_personalizado img{
+    	position: relative;
+    	right: -22px;
+
+    }
+
+</style>
 {% endblock %}
 
 
 {% block content %}
+	<div id="c_personalizado">
+
+		<div id="text_personalizado">
+			<h1 style="font-size: 50px; font-weight: 700;">PERSONALIZADO</h1>
+			<h1 style="font-size: 30px; font-weight: 300;">DE ACORDO COM SEU EVENTO</h1>
+
+			<p>O Totem PhotoPlay é um equipamento que registra os momentos de seu evento através de fotos. As pessoas se posicionam na frente dele e são clicadas em poses super descontraídas. Para casamentos, aniversários e formaturas, tenha o Totem personalizado e revestido com sua própria arte. Pode ser uma foto, uma caricatura, você escolhe. Em eventos corporativos, estampe sua marca e divulgue patrocinadores.
+			</p>
+		</div>
+
+		<div id="img_personalizado">
+			<img src="{{STATIC_URL}}img/totem.png" >
+		</div>
+		
+	</div>
+
 	
 {% endblock %}
 
