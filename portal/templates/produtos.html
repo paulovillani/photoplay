@@ -15,10 +15,161 @@
 	#header_container{
 		background:blue;
 	}
+	#parallax1{
+		height: 200px;
+		width: 1400px;
+		position: relative;
+		background-image: url("{{STATIC_URL}}/img/parallax1_produtos.jpg");
+	}
+	#parallax2{
+		height: 510px;
+		width: 1400px;
+		position: relative;
+		background-image: url("{{STATIC_URL}}/img/parallax2_produtos.jpg");
+	}
+	.cHeader{
+		background-color: rgb(80,184,72);
+		height: 100px; 
+		width: 1400px;
+	}
+	.cHeaderContent{
+		width: 1000px;
+		left: 50%;
+		margin-left: -500px;
+		position: relative;
+	}
+	.cHeader ul{
+		list-style: outside none none;
+		margin: 0;
+		padding: 0;
+	}
+	.cHeader li{
+		float: left;
+		margin: 30px 11px 0 0;
+	}
+	.cHeader h1{
+		color: white;
+		font-size: 32px;
+		margin: 0;
+	}
+	.cBody{
+		background-color: rgb(255,255,255);
+		width: 1400px;
+	}
+	.cBodyContent{
+		left: 50%;
+		margin-left: -500px;
+		position: relative;
+		display: table;
+		height: 100%;
+	}
+	.cBody_text{
+		width: 660px;
+		display: table-cell;
+		position: static;
+		vertical-align: middle;
+	}
+	.cBody_img{
+		width:  340px;
+		display: table-cell;
+		position: static;
+		vertical-align: middle;
+	}
+	.cBody p{
+		font-family: 'Lato', sans-serif;
+		font-weight: 400;
+		font-size: 15px;
+	}
+	.container1{
+		height: 530px;
+	}
+	.container2{
+		height: 470px;
+	}
+	.cFoot1{
+		background-color: rgb(80,184,72);
+		height: 200px; 
+		width: 1400px;
+	}
+	.cFoot2{
+		background-color: rgb(255,255,255);
+		height: 500px; 
+		width: 1400px;
+	}
+	.cIcon{
+		/*display: table-cell;
+		position: static;
+		vertical-align: middle;*/
+		width: 1000px;
+		left: 50%;
+		margin-left: -500px;
+		
+	}
+
 </style>
 {% endblock %}
 
 
 {% block content %}
-	
+<div id="parallax1"></div>
+<div>
+	<div class="cHeader">
+		<div class="cHeaderContent">
+			<ul>
+			<li>
+				<img src="{{STATIC_URL}}/img/icon1_b.png">
+			</li>
+			<li>
+				<h1>PHOTOLEMBRANÇA</h1>
+			</li>
+			</ul>
+		</div>
+	</div>
+	<div class="cBody container1">
+		<div class="cBodyContent">
+			<div class="cBody_text">
+				<h1 style="font-size: 38px; font-weight: 700;">FOTOS IMPRESSAS</h1>
+				<h1 style="font-size: 26px; font-weight: 300;">INSTANTANEAMENTE EM DIVERSOS FORMATOS</h1>
+
+				<p>Investir em um evento mmorável para as pessoas mais importante de sua vida exige dedicação e planejamento, o processo é arduo mas no final a sensação é unica e sempre vale a pena</p>
+
+				<p>A PhotoPlay respeita cada miuto de dedicação e oferece aos seus clientes ferramentas para que o momento seja ainda mais feliz. Nossa solução permite que cada minuto seja eternizado e as lembranças, o que de fato vale a pena, serão muito mais vivas e divertidas</p>
+
+				<p>Para Casamentos, Formaturas, Festas de Aniversário, Confraternizações e Festas de 15 anos.</p>
+			</div>
+
+			<div class="cBody_img">
+				<img src="{{STATIC_URL}}img/img1.png" >
+			</div>
+		</div>
+	</div>
+</div>
+<div id="parallax2"></div>
+<div>
+	<div class="cBody container2">
+		<div class="cBodyContent">
+			<div class="cBody_text">
+				<h1 style="font-size: 38px; font-weight: 700;">FOTOS PERSONALIZADAS</h1>
+				<h1 style="font-size: 26px; font-weight: 300;">ESCOLHA A MOLDURA DAS FOTOS</h1>
+
+				<p>As fotos processadas por nosso sistema recebem uma moldura personalizada antes de serem impressas e entregues para seus convidados.</p>
+
+				<p>Além disso, todas as fotos são organizadas e ficam disponíveis em uma galeria online para serem conferidas e baixadas após o evento.</p>
+			</div>
+
+			<div class="cBody_img">
+				<img src="{{STATIC_URL}}img/img1.png" >
+			</div>
+		</div>
+	</div>
+	<div class="cFoot1">
+		<div class="cIcon">
+
+		</div>
+	</div>
+	<div class="cFoot2">
+		
+	</div>
+</div>
+
 {% endblock %}

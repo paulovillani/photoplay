@@ -6,6 +6,11 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<link href='http://fonts.googleapis.com/css?family=Lato|Montserrat' rel='stylesheet' type='text/css'>
 	<style type="text/css">
+		*, *:before, *:after {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
 		#header{
 			width: 1400px;
 			background-image: url("{{STATIC_URL}}img/banner.png");
@@ -23,10 +28,9 @@
 		}
 		#content{
 			left: 50%;
-			margin-left: -720px;
+			margin-left: -700px;
 			width: 1400px;
-			top: 0;
-			position: absolute;
+			position: relative;
 		}
 		#header_menu ul{
 			list-style: outside none none;
@@ -44,21 +48,21 @@
 			font-size: 38px;
 			font-family: 'Montserrat', sans-serif;
 			font-weight: 700;
-			color: #3a3a3a;
-
+			margin: 0;
 		}
 		h2{ 
 			font-size: 14px;
 			font-family: 'Lato', sans-serif;
 			font-weight: 900;
 			color: white;
+			margin: 0;
 		}
-		p{ 
-			font-size: 15px;
+		h4{
+			font-size: 20px;
 			font-family: 'Lato', sans-serif;
-			font-weight: 300;
-			color: #3a3a3a;
-			line-height: 22px;
+			font-weight: 900;
+			color: white;
+			margin: 0
 		}
 		#header_menu input[type="button"]{
 			background: none repeat scroll 0 0 rgba(198, 198, 198, 0.35);
@@ -82,10 +86,50 @@
 			outline: none;
 		}
 		body{
-			top: 0;
 			left: 0;
+			margin: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
 		}
-
+		#footer{
+			position: relative;
+			width: 1400px;
+			left:50%;
+			margin-left: -700px;
+		}
+		#foot1{
+			height: 420px;
+			background-color: #20409A;
+		}
+		#foot2{
+			height: 70px;
+		}
+		.mil_content{
+			width: 1000px;
+			left: 50%;
+			margin-left: -500px;
+			position: relative;
+		}
+		#footer ul{
+			list-style: outside none none;
+			margin: 0;
+			padding: 0;
+		}
+		#foot1 li{
+			float: left;
+			margin: 20px 0 0;
+		}
+		#foot1_col_1 li{
+			width: 50%;
+		}
+		#foot1 p{
+			font-size: 14px;
+			font-family: 'Lato', sans-serif;
+			font-weight: 400;
+			color: white;
+			margin: 0;
+		}
 	</style>
 	{% block head %} {% endblock %}
 </head>
@@ -113,6 +157,42 @@
 	</div>
 
 	<div id="footer">
+		<div id="foot1">
+			<div class="mil_content">
+				<ul>
+					<li style="width:660px;">
+						<ul align="right" id="foot1_col_1">
+							<li>
+								<h4>CONTATO</h4>
+								<p>(14) 9 9853-8758</p>
+								<p style="margin-top:15px;">equipe@photoplay.com.br</p>
+							</li>
+							<li>
+								<h4>EMPRESA</h4>
+								<p>Rua Monsenhor Victor Ribeiro Mazzei, 37</p>
+								<p>Jardim Aeroporto</p>
+								<p>Marília - SP</p>
+							</li>
+							<li>
+								<h4>PARCEIRO COMERCIAL</h4>
+								<p>Quer oferecer os serviços PhotoPlay para seu clientes?</p>
+							</li>
+							<li>
+								<h4>SIGA-NOS</h4>
+							</li>
+						</ul>
+					</li>
+					<li style="width:340px;">
+						<h4>CONECTE-SE</h4>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="foot2">
+			<div class="mil_content">
+
+			</div>
+		</div>
 	</div>
 
 </body>

@@ -7,3 +7,6 @@ from django.views.generic import ListView, TemplateView, DetailView, FormView
 
 class PortalHomeView(TemplateView):
     template_name = "portal_home.html"
+
+class PortalProdutosView(TemplateView):
+	template_name = "produtos.html"
