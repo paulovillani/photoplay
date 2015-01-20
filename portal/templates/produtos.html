@@ -94,16 +94,69 @@
 	.cFoot2{
 		background-color: rgb(255,255,255);
 		height: 500px; 
-		width: 1400px;
+		width: 1000px;
 	}
 	.cIcon{
-		/*display: table-cell;
-		position: static;
-		vertical-align: middle;*/
+		position: relative;
 		width: 1000px;
 		left: 50%;
 		margin-left: -500px;
-		
+	}
+	.cIcon ul{
+		margin:0;
+		padding: 70px 0;
+	}
+	.cIcon li{
+		float: left;
+		list-style: outside none none;
+	}
+	.cIcon h3{
+		font-family: "Montserrat",sans-serif;
+		font-size: 20px;
+		color: #fff;
+		font-weight: 900;
+		margin: 20px;
+	}
+	.cIcon h3, .cIcon img{
+		float: left;
+	}
+	.cFoot2_text h1{
+		font-family: "Montserrat",sans-serif;
+		font-size: 42px;
+		color: rgb(80, 184, 72);
+		font-weight: 900;
+		margin: auto;
+	}
+	.cFoot2_text p{
+		font-family: "Lato",sans-serif;
+		font-size: 16px;
+		color: #000;
+		font-weight: 500;
+	}
+	.cFoot2_text{
+		text-align: center;
+	}
+	.cFoot2 input[type="button"]{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
+		border: 2px solid white;
+		border-radius: 10px;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 16px;
+		font-weight: 900;
+		height: 60px;
+		width: 340px;
+		margin-top: 60px;
+		box-shadow: 0 -5px 0 rgba(150, 150, 150, 0.5) inset;
+		-moz-box-shadow: 0 -5px 0 rgba(150, 150, 150, 0.5) inset;
+		-webkit-box-shadow: 0 -5px 0 rgba(150, 150, 150, 0.5) inset;
+	}
+	.cFoot2 input[type="button"]:hover{
+
+	}
+	.cFoot2 input[type="button"]:active{
+		box-shadow: none;
+		background: rgba(80, 184, 72, 0.70); /* FF3.6+ */
 	}
 
 </style>
@@ -165,20 +218,27 @@
 	<div class="cFoot1">
 		<div class="cIcon">
 		<ul>
-			<li>
-				
+			<li style="width: 29%;">
+				<img src="{{STATIC_URL}}img/classicon1_g.png">
+				<h3>+DIVERSÃO</h3>
 			</li>
-			<li>
-				
+			<li style="width: 38%;">
+				<img src="{{STATIC_URL}}img/classicon2_g.png">
+				<h3>+INTERATIVIDADE</h3>
 			</li>
-			<li>
-				
+			<li style="width: 33%;">
+				<img src="{{STATIC_URL}}img/classicon3_g.png">
+				<h3>+PERSONALIZAÇÃO</h3>
 			</li>
 		</ul>
 		</div>
 	</div>
-	<div class="cFoot2">
-		
+	<div class="cBodyContent cFoot2">
+		<div class="cBody_text cFoot2_text">
+			<h1 style="width: 710px;">TENHO INTERESSE EM TER O PHOTOPLAY EM MEU EVENTO!</h1>
+			<p>Uma atração surpreendente. Inove oferencendo interatividade e uma nova experiência.</p>
+			<input type="button" value="SOLICITAR ORÇAMENTO"></li>
+		</div>
 	</div>
 </div>
 
