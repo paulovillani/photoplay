@@ -8,7 +8,7 @@
 
 {% block head %}
 <style type="text/css">
-	#c_personalizado{
+	.c_personalizado{
 		width: 1000px;
 		position: relative;
 		left: 50%;
@@ -16,48 +16,168 @@
 		height:  550px;
 		background-color: white;
 	}
-	#text_personalizado{
+	.text_personalizado{
 		float: left;
 		width: 660px;
 		margin-top: 160px
 	}
-	#text_personalizado h1{
+	.text_personalizado h1{
 		margin: 0;
 	}
-    #img_personalizado{
+    .img_personalizado{
     	width: 340px;
     	float: left;
     	margin: 0;
     	margin-top: 100px;
     }
-     #img_personalizado img{
+    .img_personalizado img{
     	position: relative;
     	right: 18px;
 
     }
+    .banner_produtos{
+    	width: 1400px;
+    	background-image: url("{{STATIC_URL}}img/banner2.png");
+    	height: 200px;
+	}
+	.header_produtos{
+    	width: 1400px;
+    	background-color: #b1b1b1;
+    	height: 100px;
+	}
+	.header_textprodutos{
+		width: 1000px;
+		position: relative;
+		left: 50%;
+		margin-left: -500px;
+		height: 100%;
+		padding-top: 30px;
 
+	}
+	.cProdutos{
+		width: 1400px;
+		height: 500px;
+    }
+    .cTitulo{
+    	width: 1000px;
+		position: relative;
+		left: 50%;
+		margin-left: -500px;
+		height: 170px;
+	 }
+    .cTitulo li{
+    	list-style: outside none none;
+    	float: left;
+    	margin: 120px 20px 0 0;
+    }
+    .cTitulo ul{
+		margin: 0;
+		padding: 0;
+	}
+	.cTexto {
+		width: 1400px;
+		height: 250px;
+		background-color: #50b848;
+	}
+	.cTexto li {
+		list-style: outside none none;
+		float: left;
+
+	}
+	.cTexto ul{
+		margin: 0;	
+		padding: 0;
+	}
+	.cTextoContent {
+		width: 1000px;
+		position: relative;
+		left: 50%;
+		margin-left: -500px;
+		padding-top: 30px;
+		height: 250px;
+	}
+	.cTextoContent input[type="button"]{
+		background: none repeat scroll 0 0 rgb(183, 183, 183);
+		box-shadow: 0 -5px 0 rgba(150, 150, 150, 0.5) inset;
+		-moz-box-shadow: 0 -5px 0 rgba(150, 150, 150, 0.5) inset;
+		-webkit-box-shadow: 0 -5px 0 rgba(150, 150, 150, 0.5) inset;
+		border-radius: 10px;
+		border: none;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 12px;
+		font-weight: 900;
+		height: 40px;
+		width: 190px;
+		margin-top: 20px
+	}
 </style>
 {% endblock %}
 
 
 {% block content %}
-	<div id="c_personalizado">
+	<div class="c_personalizado">
 
-		<div id="text_personalizado">
+		<div class="text_personalizado">
 			<h1 style="font-size: 50px; font-weight: 700;">PERSONALIZADO</h1>
 			<h1 style="font-size: 30px; font-weight: 300;">DE ACORDO COM SEU EVENTO</h1>
 
-			<p>O Totem PhotoPlay é um equipamento que registra os momentos de seu evento através de fotos. As pessoas se posicionam na frente dele e são clicadas em poses super descontraídas. Para casamentos, aniversários e formaturas, tenha o Totem personalizado e revestido com sua própria arte. Pode ser uma foto, uma caricatura, você escolhe. Em eventos corporativos, estampe sua marca e divulgue patrocinadores.
+			<p class="ppadrao">O Totem PhotoPlay é um equipamento que registra os momentos de seu evento através de fotos. As pessoas se posicionam na frente dele e são clicadas em poses super descontraídas. Para casamentos, aniversários e formaturas, tenha o Totem personalizado e revestido com sua própria arte. Pode ser uma foto, uma caricatura, você escolhe. Em eventos corporativos, estampe sua marca e divulgue patrocinadores.
 			</p>
 		</div>
 
-		<div id="img_personalizado">
+		<div class="img_personalizado">
 			<img src="{{STATIC_URL}}img/totem.png" >
 		</div>
 		
 	</div>
 
-	
+	<div class="banner_produtos">
+	</div>
+
+	<div class="header_produtos">
+		<div class="header_textprodutos">
+		<h1 style="color: #fff; font-size: 32px;">CONHEÇA NOSSOS PRODUTOS</h1>
+		</div>
+	</div>
+
+	<div class="cProdutos">
+		<div class="cTitulo">
+			<ul>
+			<li>
+				<img src="{{STATIC_URL}}img/icon1.png">
+			</li>
+			<li>
+				<h1 style="color: #50b848;">PHOTOLEMBRANÇA</h1>
+			</li>
+			</ul>
+		</div>
+
+		<div class="cTexto">
+			<div class="cTextoContent">
+
+				<ul>
+				<li style="width: 63%">
+				<p class="ppadrao" style="color: white;">Todas as fotos tiradas no Totem PhotoPlay já saem com uma moldura exclusiva de seu evento. Elas podem ser impressas na hora e entregues para seus convidados levarem para casa.  
+				As fotos podem ser publicadas em tempo real ou enviadas para seus convidados por e-mail.</p>
+
+				<input type="button" value="SAIBA MAIS">
+
+				</li>
+				<li style="position: relative; top: -85px;">
+				<img src="{{STATIC_URL}}img/img1.png">
+				</li>
+			</div>	
+		</div>
+		<div class="cProdutosFoot">
+			<div class="cProdutosFoot1">
+			</div>
+		</div>
+
+
+	</div>
+
+
 {% endblock %}
 
 Personalizado 
