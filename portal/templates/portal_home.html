@@ -78,6 +78,9 @@
 		width: 1400px;
 		height: 250px;
 		background-color: #50b848;
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+		position: relative;
+		z-index: 11;
 	}
 	.cTexto li {
 		list-style: outside none none;
@@ -111,71 +114,120 @@
 		width: 190px;
 		margin-top: 20px
 	}
+	.cProdutosFoot {
+		width: 1400px;
+		height: 70px;
+		background-color: rgba(80, 184, 72, 0.7);
+		position: relative;
+		z-index: 10;
+	}
+	.cIcon{
+		position: relative;
+		width: 1000px;
+		left: 50%;
+		margin-left: -500px;
+		height: 100%;
+	}
+	.cIcon ul{
+		margin: 0;
+		padding: 0;
+	}
+	.cIcon li{
+		float: left;
+		list-style: outside none none;
+	}
+	.cIcon h3{
+		font-family: "Montserrat",sans-serif;
+		font-size: 20px;
+		color: #fff;
+		font-weight: 900;
+		margin: 20px;
+	}
+	.cIcon h3, .cIcon img{
+		float: left;
+	}
 </style>
 {% endblock %}
 
 
 {% block content %}
-	<div class="c_personalizado">
+<div class="c_personalizado">
 
-		<div class="text_personalizado">
-			<h1 style="font-size: 50px; font-weight: 700;">PERSONALIZADO</h1>
-			<h1 style="font-size: 30px; font-weight: 300;">DE ACORDO COM SEU EVENTO</h1>
+	<div class="text_personalizado">
+		<h1 style="font-size: 50px; font-weight: 700;">PERSONALIZADO</h1>
+		<h1 style="font-size: 30px; font-weight: 300;">DE ACORDO COM SEU EVENTO</h1>
 
-			<p class="ppadrao">O Totem PhotoPlay é um equipamento que registra os momentos de seu evento através de fotos. As pessoas se posicionam na frente dele e são clicadas em poses super descontraídas. Para casamentos, aniversários e formaturas, tenha o Totem personalizado e revestido com sua própria arte. Pode ser uma foto, uma caricatura, você escolhe. Em eventos corporativos, estampe sua marca e divulgue patrocinadores.
-			</p>
-		</div>
-
-		<div class="img_personalizado">
-			<img src="{{STATIC_URL}}img/totem.png" >
-		</div>
-		
+		<p class="ppadrao">O Totem PhotoPlay é um equipamento que registra os momentos de seu evento através de fotos. As pessoas se posicionam na frente dele e são clicadas em poses super descontraídas. Para casamentos, aniversários e formaturas, tenha o Totem personalizado e revestido com sua própria arte. Pode ser uma foto, uma caricatura, você escolhe. Em eventos corporativos, estampe sua marca e divulgue patrocinadores.
+		</p>
 	</div>
 
-	<div class="banner_produtos">
+	<div class="img_personalizado">
+		<img src="{{STATIC_URL}}img/totem.png" >
+	</div>
+	
+</div>
+
+<div class="banner_produtos">
+</div>
+
+<div class="header_produtos">
+	<div class="header_textprodutos">
+	<h1 style="color: #fff; font-size: 32px;">CONHEÇA NOSSOS PRODUTOS</h1>
+	</div>
+</div>
+
+<div class="cProdutos">
+	<div class="cTitulo">
+		<ul>
+		<li>
+			<img src="{{STATIC_URL}}img/icon1.png">
+		</li>
+		<li>
+			<h1 style="color: #50b848;">PHOTOLEMBRANÇA</h1>
+		</li>
+		</ul>
 	</div>
 
-	<div class="header_produtos">
-		<div class="header_textprodutos">
-		<h1 style="color: #fff; font-size: 32px;">CONHEÇA NOSSOS PRODUTOS</h1>
-		</div>
-	</div>
+	<div class="cTexto">
+		<div class="cTextoContent">
 
-	<div class="cProdutos">
-		<div class="cTitulo">
 			<ul>
-			<li>
-				<img src="{{STATIC_URL}}img/icon1.png">
+			<li style="width: 63%">
+			<p class="ppadrao" style="color: white;">Todas as fotos tiradas no Totem PhotoPlay já saem com uma moldura exclusiva de seu evento. Elas podem ser impressas na hora e entregues para seus convidados levarem para casa.  
+			As fotos podem ser publicadas em tempo real ou enviadas para seus convidados por e-mail.</p>
+
+			<input type="button" value="SAIBA MAIS">
+
 			</li>
-			<li>
-				<h1 style="color: #50b848;">PHOTOLEMBRANÇA</h1>
+			<li style="position: relative; top: -85px;">
+			<img src="{{STATIC_URL}}img/img1.png">
 			</li>
+		</div>	
+	</div>
+	<div class="cProdutosFoot">
+		<div class="cIcon">
+			<ul>
+			<li style="width: 20%;">
+				<img src="{{STATIC_URL}}img/classicon1.png">
+				<h3>+DIVERSÃO</h3>
+			</li>
+			<li style="width: 30%;">
+				<img src="{{STATIC_URL}}img/classicon2.png">
+				<h3>+INTERATIVIDADE</h3>
+			</li>
+			<li style="width: 30%;">
+				<img src="{{STATIC_URL}}img/classicon3.png">
+				<h3>+PERSONALIZAÇÃO</h3>
+			</li>
+			<li style="width: 10%; ">
+				<input type="button" value="SAIBA MAIS">
+			</li>	
 			</ul>
 		</div>
-
-		<div class="cTexto">
-			<div class="cTextoContent">
-
-				<ul>
-				<li style="width: 63%">
-				<p class="ppadrao" style="color: white;">Todas as fotos tiradas no Totem PhotoPlay já saem com uma moldura exclusiva de seu evento. Elas podem ser impressas na hora e entregues para seus convidados levarem para casa.  
-				As fotos podem ser publicadas em tempo real ou enviadas para seus convidados por e-mail.</p>
-
-				<input type="button" value="SAIBA MAIS">
-
-				</li>
-				<li style="position: relative; top: -85px;">
-				<img src="{{STATIC_URL}}img/img1.png">
-				</li>
-			</div>	
-		</div>
-		<div class="cProdutosFoot">
-			<div class="cProdutosFoot1">
-			</div>
-		</div>
-
-
 	</div>
+
+
+</div>
 
 
 {% endblock %}
