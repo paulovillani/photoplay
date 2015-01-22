@@ -14,6 +14,14 @@
 	}
 	#header_container{
 		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* FF3.6+ */;
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(33, 63, 154, 1); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* W3C */	
+		position: fixed;
+		z-index: 999;
 	}
 	#parallax1{
 		height: 200px;
@@ -138,6 +146,12 @@
 	}
 	.cFoot2 input[type="button"]{
 		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(80, 184, 72, 0.70); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* W3C */
 		border: 2px solid white;
 		border-radius: 10px;
 		color: white;
@@ -158,13 +172,17 @@
 		box-shadow: none;
 		background: rgba(80, 184, 72, 0.70); /* FF3.6+ */
 	}
-
+	.bgParallax{
+		background-position: 50% 0;
+		background-repeat: repeat;
+		background-attachment: fixed;
+	}
 </style>
 {% endblock %}
 
 
 {% block content %}
-<div id="parallax1"></div>
+<div id="parallax1" class="bgParallax" data-speed="15"></div>
 <div>
 	<div class="cHeader">
 		<div class="cHeaderContent">
@@ -197,7 +215,7 @@
 		</div>
 	</div>
 </div>
-<div id="parallax2"></div>
+<div id="parallax2" class="bgParallax" data-speed="15"></div>
 <div>
 	<div class="cBody container2">
 		<div class="cBodyContent">

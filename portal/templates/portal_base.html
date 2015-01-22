@@ -5,6 +5,25 @@
 	<title> {% block title %} {% endblock %} </title>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<link href='http://fonts.googleapis.com/css?family=Lato|Montserrat' rel='stylesheet' type='text/css'>
+	<!--[if !IE]><!-->
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!--<![endif]-->
+
+    <!--[if IE]>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/home-ie.css" />
+    <![endif]-->
+	<script type="text/javascript">
+    $('.bgParallax').each(function(){
+	    var $obj = $(this);
+	    $(window).scroll(function() {
+		    var yPos = -($(window).scrollTop() / $obj.data('speed'));
+		    var bgpos = '50%'+ yPos + 'px';
+		    $obj.css('background-position', bgpos );
+	    });
+    });
+
+	</script>
 	<style type="text/css">
 		*, *:before, *:after {
 			-webkit-box-sizing: border-box;
