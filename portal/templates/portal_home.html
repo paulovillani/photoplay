@@ -56,7 +56,7 @@
 	}
 	.cProdutos{
 		width: 1400px;
-		height: 500px;
+		height: 490px;
     }
     .cTitulo{
     	width: 1000px;
@@ -100,10 +100,18 @@
 		height: 250px;
 	}
 	.cTextoContent input[type="button"]{
-		background: none repeat scroll 0 0 rgb(183, 183, 183);
-		box-shadow: 0 -5px 0 rgba(150, 150, 150, 0.5) inset;
-		-moz-box-shadow: 0 -5px 0 rgba(150, 150, 150, 0.5) inset;
-		-webkit-box-shadow: 0 -5px 0 rgba(150, 150, 150, 0.5) inset;
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(183, 183, 183);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(183, 183, 183); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(183, 183, 183); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(183, 183, 183); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(183, 183, 183); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(183, 183, 183); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(183, 183, 183); /* W3C */
+		box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
 		border-radius: 10px;
 		border: none;
 		color: white;
@@ -113,6 +121,10 @@
 		height: 40px;
 		width: 190px;
 		margin-top: 20px
+	}
+	.cTextoContent input[type="button"]:active{
+		box-shadow: none;
+		background: rgb(192, 192, 192); /* FF3.6+ */
 	}
 	.cProdutosFoot {
 		width: 1400px;
@@ -125,7 +137,7 @@
 		width: 1000px;
 		left: 50%;
 		margin-left: -500px;
-		top: -30px;
+		padding-top: 20px;
 	}
 	.cIcon ul{
 		margin: 0;
@@ -137,13 +149,52 @@
 	}
 	.cIcon h3{
 		font-family: "Montserrat",sans-serif;
-		font-size: 20px;
+		font-size: 16px;
 		color: #fff;
 		font-weight: 900;
 		margin: 5px 10px;
 	}
 	.cIcon h3, .cIcon img{
 		float: left;
+	}
+	.cIcon input[type="button"]{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(64, 170, 58);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(64, 170, 58); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(64, 170, 58); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(64, 170, 58); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(64, 170, 58); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(64, 170, 58); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(64, 170, 58); /* W3C */
+		box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		border-radius: 10px;
+		border: none;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 12px;
+		font-weight: 900;
+		height: 40px;
+		width: 210px;
+		position: relative;
+		top: -7px;
+	}
+	.cIcon input[type="button"]:active{
+		box-shadow: none;
+		background: rgb(64, 170, 58); /* FF3.6+ */
+	}
+	.bRed {
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(237, 28, 36);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(237, 28, 36); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(237, 28, 36); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(237, 28, 36); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(237, 28, 36); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(237, 28, 36); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(237, 28, 36); /* W3C */
 	}
 </style>
 {% endblock %}
@@ -198,7 +249,7 @@
 			<input type="button" value="SAIBA MAIS">
 
 			</li>
-			<li style="position: relative; top: -85px;">
+			<li style="position: relative; margin-top: -85px;">
 			<img src="{{STATIC_URL}}img/img1.png">
 			</li>
 		</div>	
@@ -206,11 +257,11 @@
 	<div class="cProdutosFoot">
 		<div class="cIcon">
 		<ul>
-			<li style="width: 20%;">
+			<li style="width: 21%;">
 				<img src="{{STATIC_URL}}img/classicon1.png">
 				<h3>+DIVERSÃO</h3>
 			</li>
-			<li style="width: 30%;">
+			<li style="width: 25%;">
 				<img src="{{STATIC_URL}}img/classicon2.png">
 				<h3>+INTERATIVIDADE</h3>
 			</li>
@@ -218,15 +269,69 @@
 				<img src="{{STATIC_URL}}img/classicon3.png">
 				<h3>+PERSONALIZAÇÃO</h3>
 			</li>
-			<li style="width: 10%;">
-				<input type="button" value="SAIBA MAIS">
+			<li>
+				<input type="button" value="SOLICITAR ORÇAMENTO">
 			</li>	
 		</ul>
 		</div>
 	</div>
-
-
 </div>
+
+<div class="cProdutos" style="height: 550px;">
+	<div class="cTitulo">
+		<ul>
+		<li>
+			<img src="{{STATIC_URL}}img/icon2.png">
+		</li>
+		<li>
+			<h1 style="color: #ed1c24;">PHOTOGRAM</h1>
+		</li>
+		</ul>
+	</div>
+
+	<div class="cTexto"  style="background-color: #ed1c24; height: 320px;">
+		<div class="cTextoContent">
+
+			<ul>
+			<li style="width: 63%">
+			<p class="ppadrao" style="color: white;">Transforme seu smartphone em uma Polaroid. Imprima fotos direto do seu celular.
+			</p>	
+			<p class="ppadrao" style="color: white;">Seus convidados adoram tirar fotos e publicar no Instagram?</p>
+			<p class="ppadrao" style="color: white;">O que você acha de poder imprimir essas fotos para que eles levem como lembrança?</p>
+			<p class="ppadrao" style="color: white;">Com Photogram, isso é possível. Toda foto publicada no Instagram com a #hashtag de seu evento é capturada e processada por nosso sistema e são então impressas na hora.
+		    </p>
+
+			<input type="button" value="SAIBA MAIS">
+
+			</li>
+			<li style="position: relative; margin-top: -100px;">
+			<img src="{{STATIC_URL}}img/img2.png">
+			</li>
+		</div>	
+	</div>
+	<div class="cProdutosFoot" style="background-color: rgba(237, 28, 36, 0.7);">
+		<div class="cIcon">
+		<ul>
+			<li style="width: 21%;">
+				<img src="{{STATIC_URL}}img/classicon1.png">
+				<h3>+DIVERSÃO</h3>
+			</li>
+			<li style="width: 25%;">
+				<img src="{{STATIC_URL}}img/classicon2.png">
+				<h3>+INTERATIVIDADE</h3>
+			</li>
+			<li style="width: 30%;">
+				<img src="{{STATIC_URL}}img/classicon3.png">
+				<h3>+PERSONALIZAÇÃO</h3>
+			</li>
+			<li>
+				<input type="button" class="bRed" value="SOLICITAR ORÇAMENTO">
+			</li>	
+		</ul>
+		</div>
+	</div>
+</div>
+
 
 
 {% endblock %}
