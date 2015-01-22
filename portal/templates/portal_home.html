@@ -67,7 +67,8 @@
 	 }
     .cTitulo li{
     	list-style: outside none none;
-    	float: left;
+    	display: inline-block;
+    	vertical-align: middle;
     	margin: 120px 20px 0 0;
     }
     .cTitulo ul{
@@ -199,6 +200,52 @@
 	input[type="button"].bRed:active{
 		box-shadow: none;
 		background: rgb(237, 28, 36); /* FF3.6+ */
+	}
+		input[type="button"].bBlue {
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(5, 87, 160);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(5, 87, 160); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(5, 87, 160); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(5, 87, 160); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* W3C */
+	}
+	input[type="button"].bBlue:active{
+		box-shadow: none;
+		background: rgb(5, 87, 160); /* FF3.6+ */
+	}
+	input[type="button"].bPurple {
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(138, 80, 160);
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+	rgb(138, 80, 160); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(138, 80, 160); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(138, 80, 160); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(138, 80, 160); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+	rgb(138, 80, 160); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(138, 80, 160); /* W3C */
+	}
+	input[type="button"].bPurple:active{
+		box-shadow: none;
+		background: rgb(138, 80, 160); /* FF3.6+ */
+	}
+	
+	input[type="button"].bYellow {
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(212, 169, 42);
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+	rgb(212, 169, 42); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(212, 169, 42); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(212, 169, 42); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(212, 169, 42); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+	rgb(212, 169, 42); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(212, 169, 42); /* W3C */
+	}
+	input[type="button"].bYellow:active{
+		box-shadow: none;
+		background: rgb(212, 169, 42); /* FF3.6+ */
 	}
 </style>
 {% endblock %}
@@ -343,32 +390,30 @@
 			<img src="{{STATIC_URL}}img/icon3.png">
 		</li>
 		<li>
-			<h1 style="color: #ed1c24;">PHOTOLIVRO</h1>
+			<h1 style="color: #0557a0;">PHOTOLIVRO</h1>
 		</li>
 		</ul>
 	</div>
 
-	<div class="cTexto"  style="background-color: #ed1c24; height: 320px;">
+	<div class="cTexto"  style="background-color: #0557a0; height: 320px;">
 		<div class="cTextoContent">
 
 			<ul>
-			<li style="width: 63%">
-			<p class="ppadrao" style="color: white;">Transforme seu smartphone em uma Polaroid. Imprima fotos direto do seu celular.
+			<li style="width: 42%">
+			<p class="ppadrao" style="color: white;">Todas as fotos de seu evento reunidas em um único lugar.
 			</p>	
-			<p class="ppadrao" style="color: white; margin: 0;">Seus convidados adoram tirar fotos e publicar no Instagram?</p>
-			<p class="ppadrao" style="color: white; margin: 0;">O que você acha de poder imprimir essas fotos para que eles levem como lembrança?</p>
-			<p class="ppadrao" style="color: white; margin: 0;">Com Photogram, isso é possível. Toda foto publicada no Instagram com a #hashtag de seu evento é capturada e processada por nosso sistema e são então impressas na hora.
+			<p class="ppadrao" style="color: white; margin: 0;">O Photolivro é produzido após o evento e reúne as fotos tiradas no Totem PhotoPlay com uma diagramação moderna, para você recordar os momentos inesquecíveis sempre que quiser.
 		    </p>
 
 			<input type="button" value="SAIBA MAIS">
 
 			</li>
 			<li style="position: relative; margin-top: -100px;">
-			<img src="{{STATIC_URL}}img/img2.png">
+			<img src="{{STATIC_URL}}img/img3.png">
 			</li>
 		</div>	
 	</div>
-	<div class="cProdutosFoot" style="background-color: rgba(237, 28, 36, 0.7);">
+	<div class="cProdutosFoot" style="background-color: rgba(5, 87, 160, 0.7);">
 		<div class="cIcon">
 		<ul>
 			<li style="width: 21%;">
@@ -384,10 +429,123 @@
 				<h3>+RESULTADOS</h3>
 			</li>
 			<li>
-				<input type="button" class="bRed" value="SOLICITAR ORÇAMENTO">
+				<input type="button" class="bBlue" value="SOLICITAR ORÇAMENTO">
 			</li>	
 		</ul>
 		</div>
+	</div>
+</div>
+
+<div class="cProdutos" style="height: 550px;">
+	<div class="cTitulo">
+		<ul>
+		<li>
+			<img src="{{STATIC_URL}}img/icon4.png">
+		</li>
+		<li>
+			<h1 style="color: #8a50a0;">PHOTOPROJEÇÃO</h1>
+		</li>
+		</ul>
+	</div>
+
+	<div class="cTexto"  style="background-color: #8a50a0; height: 320px;">
+		<div class="cTextoContent">
+
+			<ul>
+			<li style="width: 55%">
+			<p class="ppadrao" style="color: white;">Tirou uma foto no totem? Agora é só esperar para se ver no telão. Mais interatividade e diversão para sua festa.
+			</p>	
+			<p class="ppadrao" style="color: white; margin: 0;">Todas as fotos tiradas no Totem PhotoPlay podem ser automaticamente projetadas nos telões e televisores de seu evento. 
+
+
+		    </p>
+
+			<input type="button" value="SAIBA MAIS">
+
+			</li>
+			<li style="position: relative; margin-top: -100px;">
+			<img src="{{STATIC_URL}}img/img4.png">
+			</li>
+		</div>	
+	</div>
+	<div class="cProdutosFoot" style="background-color: rgba(138, 80, 160, 0.7);">
+		<div class="cIcon">
+		<ul>
+			<li style="width: 21%;">
+				<img src="{{STATIC_URL}}img/classicon1.png">
+				<h3>+DIVERSÃO</h3>
+			</li>
+			<li style="width: 25%;">
+				<img src="{{STATIC_URL}}img/classicon2.png">
+				<h3>+INTERATIVIDADE</h3>
+			</li>
+			<li style="width: 30%;">
+				<img src="{{STATIC_URL}}img/classicon4.png">
+				<h3>+RESULTADOS</h3>
+			</li>
+			<li>
+				<input type="button" class="bPurple" value="SOLICITAR ORÇAMENTO">
+			</li>	
+		</ul>
+		</div>
+	</div>
+</div>
+
+<div class="cProdutos">
+	<div class="cTitulo">
+		<ul>
+		<li>
+			<img src="{{STATIC_URL}}img/icon5.png">
+		</li>
+		<li>
+			<h1 style="color: #d4a92a;">PHOTOEMPRESAS</h1>
+		</li>
+		</ul>
+	</div>
+
+	<div class="cTexto" style="background-color: #d4a92a;">
+		<div class="cTextoContent">
+
+			<ul>
+			<li style="width: 50%">
+			<p class="ppadrao" style="color: white;">Solução completa para a ativação de sua marca em eventos. Fotos com a sua marca espalhadas pelo Facebook que geram tráfego para sua página e aumentam o engajamento dos usuários.  Crescimento da sua base de fãs e coleta de e-mails para uso em campanhas de marketing.</p>
+
+			<input type="button" value="SAIBA MAIS">
+
+			</li>
+			<li style="position: relative; margin-top: -85px;">
+			<img src="{{STATIC_URL}}img/img5.png">
+			</li>
+		</div>	
+	</div>
+	<div class="cProdutosFoot" style="background-color: rgba(212, 169, 42, 0.7);">
+		<div class="cIcon">
+		<ul>
+			<li style="width: 21%;">
+				<img src="{{STATIC_URL}}img/classicon1.png">
+				<h3>+DIVERSÃO</h3>
+			</li>
+			<li style="width: 25%;">
+				<img src="{{STATIC_URL}}img/classicon2.png">
+				<h3>+INTERATIVIDADE</h3>
+			</li>
+			<li style="width: 30%;">
+				<img src="{{STATIC_URL}}img/classicon3.png">
+				<h3>+PERSONALIZAÇÃO</h3>
+			</li>
+			<li>
+				<input type="button" class="bYellow" value="SOLICITAR ORÇAMENTO">
+			</li>	
+		</ul>
+		</div>
+	</div>
+</div>
+
+<div class="cBodyContent cFoot2">
+	<div class="cBody_text cFoot2_text">
+		<h1 style="width: 710px;">TENHO INTERESSE EM TER O PHOTOPLAY EM MEU EVENTO!</h1>
+		<p>Uma atração surpreendente. Inove oferencendo interatividade e uma nova experiência.</p>
+		<input type="button" value="SOLICITAR ORÇAMENTO">
 	</div>
 </div>
 
