@@ -14,14 +14,16 @@
         <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/home-ie.css" />
     <![endif]-->
 	<script type="text/javascript">
-    $('.bgParallax').each(function(){
-	    var $obj = $(this);
-	    $(window).scroll(function() {
-		    var yPos = -($(window).scrollTop() / $obj.data('speed'));
-		    var bgpos = '50%'+ yPos + 'px';
-		    $obj.css('background-position', bgpos );
+	$(document).ready(function(){
+	    $('.bgParallax').each(function(){
+		    var $obj = $(this);
+		    $(window).scroll(function() {
+			    var yPos = -($(window).scrollTop() / $obj.data('speed'));
+			    var bgpos = '50%'+ yPos + 'px';
+			    $obj.css('background-position', bgpos );
+		    });
 	    });
-    });
+	});
 
 	</script>
 	<style type="text/css">
@@ -157,6 +159,62 @@
 			font-weight: 400;
 			color: white;
 			margin: 0;
+		}
+		.cBodyContent{
+			left: 50%;
+			margin-left: -500px;
+			position: relative;
+			display: table;
+			height: 100%;
+		}
+		.cFoot2_text h1{
+			font-family: "Montserrat",sans-serif;
+			font-size: 42px;
+			color: rgb(80, 184, 72);
+			font-weight: 900;
+			margin: auto;
+		}
+		.cFoot2_text p{
+			font-family: "Lato",sans-serif;
+			font-size: 16px;
+			color: #000;
+			font-weight: 500;
+		}
+		.cFoot2_text{
+			text-align: center;
+		}
+		.cFoot2 input[type="button"]{
+			background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
+			background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(80, 184, 72, 0.70); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* IE10+ */
+			background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* W3C */
+			border: 2px solid white;
+			border-radius: 10px;
+			color: white;
+			font-family: "Montserrat",sans-serif;
+			font-size: 16px;
+			font-weight: 900;
+			height: 60px;
+			width: 340px;
+			margin-top: 60px;
+			box-shadow: 0 -5px 0 rgba(0,0,0,0.2) inset;
+			-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+			-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		}
+		.cFoot2 input[type="button"]:hover{
+
+		}
+		.cFoot2 input[type="button"]:active{
+			box-shadow: none;
+			background: rgba(80, 184, 72, 0.70); /* FF3.6+ */
+		}
+		.bgParallax{
+			background-position: 50% 0;
+			background-repeat: repeat;
+			background-attachment: fixed;
 		}
 	</style>
 	{% block head %} {% endblock %}
