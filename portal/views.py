@@ -10,3 +10,6 @@ class PortalHomeView(TemplateView):
 
 class PortalProdutosView(TemplateView):
 	template_name = "produtos.html"
+
+class PortalContatoView(TemplateView):
+	template_name = "contato.html"
