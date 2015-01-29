@@ -14,7 +14,7 @@ class ContactForm(forms.Form):
 		widget=forms.RadioSelect,
 		choices = SERVICE_CHOIVCES,
 		required=True, 
-		label="PARA QUAL TIPO DE EVENTO DESEJA CONTRATAR O SERVIÇO?"
+		label="QUAL TIPO DE EVENTO?"
 	)
 	#service_type = forms.ChoiceField(
 		# widget=forms.TextInput(
