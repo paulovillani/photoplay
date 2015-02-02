@@ -52,7 +52,7 @@
 		z-index: 999;
 	}
 	#parallax1{
-		height: 300px;
+		height: 200px;
 		width: 1400px;
 		position: relative;
 		background-image: url("{{STATIC_URL}}/img/parallax1_produtos.jpg");
@@ -87,13 +87,13 @@
 		position: relative;
 		left: 50%;
 		margin-left: -500px;
-		height: 940px;
+		height: 900px;
 		background-color: white;
 	}
 	.cContatoText{
 		float: right;
 		width: 370px;
-		margin-top: 160px;
+		margin-top: 120px;
 	}
 	.cContato_img{
 		width:  370px;
@@ -102,7 +102,7 @@
 	.cContatoForm{
 		width: 480px;
 		float: left;
-		margin-top: 160px;
+		margin-top: 120px;
 	}
 	.cContatoForm>label[for=id_service_type_0]{
 		font-family: "Montserrat",sans-serif;
@@ -152,21 +152,31 @@
 	}
 	.cContatoCliente{
 		width: 1400px;
-		display: table;
-   		position: relative;
+		position: relative;
     	height: 200px;
 		background-color: #e3e3e3;
 	}
 	.cContatoCliente_Text{
 		width: 1000px;
-		display: table-cell;
-    	position: static;
-   		vertical-align: middle;
-		left: 50%;
+		position: relative;
+   		left: 50%;
 		margin-left: -500px;
-		text-align: center;
 	}
-	
+	.cContatoCliente_Text ul{
+		list-style: outside none none;
+		display: table;
+		position: relative;
+		height: 200px;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	.cContatoCliente_Text li{
+		display: table-cell;
+		position: static;
+		text-align: center;
+		vertical-align: middle;
+	}
 </style>
 {% endblock %}
 
@@ -198,7 +208,14 @@
 
 <div class="cContatoCliente">
 	<div class="cContatoCliente_Text">
-		<h2 style="font-size: 26px; font-weight: 100; width: 50%; color: #090909; margin: auto;">As fotos ficaram ótimas! Parabéns pelo trabalho, o serviço de vocês é ótimo e o atendimento nem se fala!</h2>
+		<ul>
+		<li id="cContatoCliente_Icon1"><img src="{{STATIC_URL}}img/icon6.png"></li>
+		<li><h2 style="font-size: 26px; font-weight: 100; width: 700px; color: #090909; margin: auto;">As fotos ficaram ótimas! Parabéns pelo trabalho, o serviço de vocês é ótimo e o atendimento nem se fala!</h2><h1 style="font-size: 14px; color: #213f9a; margin-top: 20px;">Maria Tereza, Marília-SP</h1>
+		</li>
+		<li id="cContatoCliente_Icon2"><img src="{{STATIC_URL}}img/icon7.png"></li>
+	</div>	
+	</ul>
+		
 	</div>
 </div>
 
