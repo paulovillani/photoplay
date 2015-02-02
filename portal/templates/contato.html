@@ -59,16 +59,89 @@
 		position: relative;
 		left: 50%;
 		margin-left: -500px;
-		height:  550px;
+		height: 860px;
 		background-color: white;
 	}
 	.cContatoText{
 		float: right;
 		width: 370px;
-		margin-top: 160px
+		margin-top: 200px
 	}
 	.cContato_img{
-		height:  370px;
+		width:  370px;
+
+	}
+	.cContatoForm{
+		width: 480px;
+		float: left;
+		margin-top: 160px;
+	}
+	.cContatoForm>label[for=id_service_type_0]{
+		font-family: "Montserrat",sans-serif;
+		font-size: 20px;
+		color: #213f9a;
+		font-weight: 900;
+		margin: 20px;		
+	}
+	.cContatoForm ul{
+		padding: 0;
+	}
+	.cContatoForm li{
+		font-family: "Lato",sans-serif;
+		font-size: 14px;
+		color: #3a3a3a;
+		font-weight: 300;
+		list-style: outside none none;
+	}
+	.cContatoForm textarea{
+		padding: 10px 0 0 20px;
+	}
+	.cContatoForm input{
+		padding: 0px 0 0 20px;
+	}
+	#id_name{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 50px;
+    	width: 420px;
+    	margin-top: 20px;
+	}
+	#id_email{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 50px;
+    	width: 420px;
+    	margin-top: 20px;
+	}
+	#id_date_start{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 50px;
+    	width: 420px;
+    	margin-top: 20px;
+	}
+	#id_message{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 100px;
+    	width: 420px;
+    	margin-top: 20px;
 	}
 </style>
 {% endblock %}
@@ -95,9 +168,7 @@
 		no  totem e das fotos publicadas no Instagram com a hashtag do seu evento.
 		</p>
 
-		<div class="cContato_img">
 		<img src="{{STATIC_URL}}img/img7.png">
-		</div>
 	</div>
 </div>
 
