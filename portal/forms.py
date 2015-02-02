@@ -24,7 +24,7 @@ class ContactForm(forms.Form):
 #		label="QUAL A CIDADE MAIS PRÓXIMA DO EVENTO?"
 #	)
 	name = forms.CharField(
-		label="PREECHA OS CAMPOS ABAIXO",
+		label="PREENCHA OS CAMPOS ABAIXO",
 		widget=forms.TextInput(
             attrs={"placeholder": u"Seu nome (obrigatório)"}), 
 		required=True,
