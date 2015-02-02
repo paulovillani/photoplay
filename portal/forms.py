@@ -14,7 +14,7 @@ class ContactForm(forms.Form):
 		widget=forms.RadioSelect,
 		choices = SERVICE_CHOIVCES,
 		required=True, 
-		label="PARA QUAL TIPO DE EVENTO DESEJA CONTRATAR O SERVIÇO?"
+		label="QUAL TIPO DE EVENTO?"
 	)
 	#service_type = forms.ChoiceField(
 		# widget=forms.TextInput(
@@ -24,10 +24,10 @@ class ContactForm(forms.Form):
 #		label="QUAL A CIDADE MAIS PRÓXIMA DO EVENTO?"
 #	)
 	name = forms.CharField(
-		label="",
+		label="PREECHA OS CAMPOS ABAIXO",
 		widget=forms.TextInput(
             attrs={"placeholder": u"Seu nome (obrigatório)"}), 
-		required=True
+		required=True,
 	)
 	email = forms.EmailField(
 		label="",
