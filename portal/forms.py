@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms
+from municipios.widgets import SelectMunicipioWidget
 
 SERVICE_CHOIVCES = (('casamento', 'Casamento'),
 					('aniversario', u'Aniversário'),
@@ -16,13 +17,11 @@ class ContactForm(forms.Form):
 		required=True, 
 		label="QUAL TIPO DE EVENTO?"
 	)
-	#service_type = forms.ChoiceField(
-		# widget=forms.TextInput(
-		#     attrs={"placeholder": u"Cidade"}),
-	#	choices = [u'Casamento', "Aniversário", "Formatura", "Corporativo", "Outro"],
-#		required=True, 
-#		label="QUAL A CIDADE MAIS PRÓXIMA DO EVENTO?"
-#	)
+	municipio = forms.IntegerField(
+		widget=SelectMunicipioWidget,
+		required=True, 
+		label=""
+	)
 	name = forms.CharField(
 		label="PREENCHA OS CAMPOS ABAIXO",
 		widget=forms.TextInput(

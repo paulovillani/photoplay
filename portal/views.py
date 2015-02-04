@@ -9,8 +9,20 @@ from forms import ContactForm
 class PortalHomeView(TemplateView):
     template_name = "portal_home.html"
 
-class PortalProdutosView(TemplateView):
-	template_name = "produtos.html"
+class PortalPhotoLivroView(TemplateView):
+	template_name = "produtos_photolivro.html"
+
+class PortalPhotoLembrancaView(TemplateView):
+	template_name = "produtos_photolembraca.html"
+
+class PortalPhotoGramView(TemplateView):
+	template_name = "produtos_photogram.html"
+
+class PortalPhotoProjecaoView(TemplateView):
+	template_name = "produtos_photoprojecao.html"
+
+class PortalPhotoEmpresaView(TemplateView):
+	template_name = "produtos_photoempresa.html"
 
 class PortalContatoView(TemplateView):
 	template_name = "contato.html"
