@@ -52,7 +52,7 @@
 		z-index: 999;
 	}
 	#parallax1{
-		height: 300px;
+		height: 200px;
 		width: 1400px;
 		position: relative;
 		background-image: url("{{STATIC_URL}}/img/parallax1_produtos.jpg");
@@ -87,13 +87,13 @@
 		position: relative;
 		left: 50%;
 		margin-left: -500px;
-		height: 860px;
+		height: 900px;
 		background-color: white;
 	}
 	.cContatoText{
 		float: right;
 		width: 370px;
-		margin-top: 200px
+		margin-top: 120px
 	}
 	.cContato_img{
 		width:  370px;
@@ -102,14 +102,19 @@
 	.cContatoForm{
 		width: 480px;
 		float: left;
-		margin-top: 160px;
+		margin-top: 120px;
 	}
 	.cContatoForm>label[for=id_service_type_0]{
 		font-family: "Montserrat",sans-serif;
 		font-size: 20px;
 		color: #213f9a;
 		font-weight: 900;
-		margin: 20px;		
+		}
+	.cContatoForm>label[for=id_name]{
+		font-family: "Montserrat",sans-serif;
+		font-size: 20px;
+		color: #213f9a;
+		font-weight: 900;	
 	}
 	.cContatoForm ul{
 		padding: 0;
@@ -178,8 +183,8 @@
 {% block content %}
 <div id="parallax1" class="bgParallax" data-speed="9"></div>
 <div class="cContato"> 
-	<div class="cContatoForm">
-		<form action="/enviar_contato/" method="post">
+	<div>
+		<form class="cContatoForm" action="/enviar_contato/" method="post">
 			{% csrf_token %}
 			{{ contact_form.media }}
 			{{contact_form}}
