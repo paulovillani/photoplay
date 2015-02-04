@@ -52,7 +52,7 @@
 		z-index: 999;
 	}
 	#parallax1{
-		height: 200px;
+		height: 300px;
 		width: 1400px;
 		position: relative;
 		background-image: url("{{STATIC_URL}}/img/parallax1_produtos.jpg");
@@ -87,13 +87,13 @@
 		position: relative;
 		left: 50%;
 		margin-left: -500px;
-		height: 900px;
+		height: 860px;
 		background-color: white;
 	}
 	.cContatoText{
 		float: right;
 		width: 370px;
-		margin-top: 120px;
+		margin-top: 200px
 	}
 	.cContato_img{
 		width:  370px;
@@ -102,19 +102,14 @@
 	.cContatoForm{
 		width: 480px;
 		float: left;
-		margin-top: 120px;
+		margin-top: 160px;
 	}
 	.cContatoForm>label[for=id_service_type_0]{
 		font-family: "Montserrat",sans-serif;
 		font-size: 20px;
 		color: #213f9a;
 		font-weight: 900;
-	}
-	.cContatoForm>label[for=id_name]{
-		font-family: "Montserrat",sans-serif;
-		font-size: 20px;
-		color: #213f9a;
-		font-weight: 900;
+		margin: 20px;		
 	}
 	.cContatoForm ul{
 		padding: 0;
@@ -126,20 +121,13 @@
 		font-weight: 300;
 		list-style: outside none none;
 	}
-	.cContatoForm>textarea{
+	.cContatoForm textarea{
 		padding: 10px 0 0 20px;
-		border: 1px solid #b5b5b5;
-    	border-radius: 10px;
-   		color: #3a3a3a;
-    	font-family: "Lato",sans-serif;
-    	font-size: 14px;
-    	font-weight: 300;
-    	height: 100px;
-    	width: 420px;
-    	margin-top: 20px;
 	}
-	.cContatoForm>input{
+	.cContatoForm input{
 		padding: 0px 0 0 20px;
+	}
+	#id_name{
 		border: 1px solid #b5b5b5;
     	border-radius: 10px;
    		color: #3a3a3a;
@@ -150,32 +138,38 @@
     	width: 420px;
     	margin-top: 20px;
 	}
-	.cContatoCliente{
-		width: 1400px;
-		position: relative;
-    	height: 200px;
-		background-color: #e3e3e3;
+	#id_email{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 50px;
+    	width: 420px;
+    	margin-top: 20px;
 	}
-	.cContatoCliente_Text{
-		width: 1000px;
-		position: relative;
-   		left: 50%;
-		margin-left: -500px;
+	#id_date_start{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 50px;
+    	width: 420px;
+    	margin-top: 20px;
 	}
-	.cContatoCliente_Text ul{
-		list-style: outside none none;
-		display: table;
-		position: relative;
-		height: 200px;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-	.cContatoCliente_Text li{
-		display: table-cell;
-		position: static;
-		text-align: center;
-		vertical-align: middle;
+	#id_message{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 100px;
+    	width: 420px;
+    	margin-top: 20px;
 	}
 </style>
 {% endblock %}
@@ -187,39 +181,27 @@
 	<div class="cContatoForm">
 		<form action="/enviar_contato/" method="post">
 			{% csrf_token %}
+			{{ contact_form.media }}
 			{{contact_form}}
 			<input type="submit" value="Submit" />
 		</form>
 	</div>
 	<div class="cContatoText">
-		<h3 style="font-size: 28px; font-weight: 700; color: #213f9a;">DEIXE SEU EVENTO</h1>
-		<h3 style="font-size: 38px; font-weight: 700; color: #213f9a;">MAIS DIVERTIDO!</h1>
+		<h3 style="font-size: 28px; font-weight: 700;">DEIXE SEU EVENTO</h1>
+		<h3 style="font-size: 38px; font-weight: 700;">MAIS DIVERTIDO!</h1>
 
 
-		<h1 style="font-size: 18px; font-weight: 700; margin-top: 60px; color: #213f9a;">FOTOS ILIMITADAS</h1>
+		<h1 style="font-size: 18px; font-weight: 700; margin-top: 60px;">FOTOS ILIMITADAS</h1>
 		<p class="ppadrao">Seus convidados tiram fotos à vontade e levam 
 		para casa uma lembrança personalizada.
 		</p>
 
-		<h1 style="font-size: 18px; font-weight: 700; margin-top: 60px; color: #213f9a;">IMAGENS NO TELÃO EM TEMPO REAL</h1>
+		<h1 style="font-size: 18px; font-weight: 700; margin-top: 60px;">IMAGENS NO TELÃO EM TEMPO REAL</h1>
 		<p class="ppadrao">Mais interatividade com projeção das fotos tiradas
 		no  totem e das fotos publicadas no Instagram com a hashtag do seu evento.
 		</p>
 
 		<img src="{{STATIC_URL}}img/img7.png">
-	</div>
-</div>
-
-<div class="cContatoCliente">
-	<div class="cContatoCliente_Text">
-		<ul>
-		<li id="cContatoCliente_Icon1"><img src="{{STATIC_URL}}img/icon6.png"></li>
-		<li><h2 style="font-size: 26px; font-weight: 100; width: 700px; color: #090909; margin: auto;">As fotos ficaram ótimas! Parabéns pelo trabalho, o serviço de vocês é ótimo e o atendimento nem se fala!</h2><h1 style="font-size: 14px; color: #213f9a; margin-top: 20px;">Maria Tereza, Marília-SP</h1>
-		</li>
-		<li id="cContatoCliente_Icon2"><img src="{{STATIC_URL}}img/icon7.png"></li>
-	</div>	
-	</ul>
-		
 	</div>
 </div>
 
