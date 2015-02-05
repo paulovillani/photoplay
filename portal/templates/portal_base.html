@@ -58,7 +58,7 @@
 			width: 1400px;
 			position: relative;
 		}
-		#header_menu ul{
+		#header_menu>ul{
 			list-style: outside none none;
 			margin: 30px 0 0;
 			padding: 0;
@@ -68,7 +68,8 @@
 			float: left;
 		}
 		#header_menu h2{
-			margin: 10px 30px 0
+			margin: 10px 30px 0;
+			float: left;
 		}
 		h1{
 			font-size: 38px;
@@ -95,6 +96,13 @@
 			font-weight: 900;
 			color: white;
 			margin: 0
+		}
+		h5{
+			font-size: 12px;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 400;
+			margin: 0;
+			color: white;
 		}
 		.ppadrao {
 			font-size: 15px;
@@ -236,6 +244,27 @@
 			background-repeat: repeat;
 			background-attachment: fixed;
 		}
+		.dropdown-menu{
+		    background-clip: padding-box;
+		    background-color: #213f9a; 
+		    font-size: 14px;
+		    list-style: outside none none;
+		    margin: 2px 0 0 15px;
+		    width: 140px;
+		    padding: 10px 15px;
+		    position: absolute;
+		    top: 100%;
+		    z-index: 1000;
+		    line-height: 25px;
+		}
+		.caret{
+			border-color: #fff transparent -moz-use-text-color;
+			border-style: solid solid dotted;
+			border-width: 4px 4px 0;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 15px 0 0 0;
+		}
 	</style>
 	{% block head %} {% endblock %}
 </head>
@@ -248,8 +277,20 @@
 				<div id="header_menu">
 					<ul>
 						<li><a href="{% url 'Portal' %}"><img src="{{STATIC_URL}}img/logo.png"></a></li>
-						<li style="margin-left: 25px;"><a href="#"><h2>Produtos</h2></a></li>
-						<li><h2>Blog</h2></li>
+						<li style="margin-left: 25px;">
+							<a href="#">
+								<h2>Produtos</h2>
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="{% url 'PhotoLembranca' %}"><h5>PhotoLembrança</h5></a></li>
+								<li><a href="{% url 'PhotoGram' %}"><h5>PhotoGram</h5></a></li>
+								<li><a href="{% url 'PhotoLivro' %}"><h5>PhotoLivro</h5></a></li>
+								<li><a href="{% url 'PhotoProjecao' %}"><h5>PhotoProjeção</h5></a></li>
+								<li><a href="{% url 'PhotoEmpresa' %}"><h5>PhotoEmpresa</h5></a></li>
+							</ul>
+						</li>
+						<li style="margin-left: 20px;"><h2>Blog</h2></li>
 						<li><a href="{% url 'Contato' %}"><h2>Contato</h2></a></li>
 						<li style="float:right;"><input type="button" value="SOLICITAR ORÇAMENTO"></li>
 					</ul>
