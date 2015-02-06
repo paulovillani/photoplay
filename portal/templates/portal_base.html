@@ -150,6 +150,7 @@
 			background-color: #20409A;
 		}
 		#foot2{
+			margin-top: 30px;
 			height: 70px;
 		}
 		.mil_content{
@@ -265,11 +266,27 @@
 			vertical-align: middle;
 			margin: 15px 0 0 0;
 		}
+		.footsign{
+			float: right;
+		}
+		.footcopyright{
+			float: left;
+		}
+		
 	</style>
 	{% block head %} {% endblock %}
 </head>
 
 <body>
+			<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
 	{% block body %} {% endblock %}
 	<div id="content">
 		<div id="header">
@@ -326,18 +343,26 @@
 							</li>
 							<li>
 								<h4>SIGA-NOS</h4>
+
 							</li>
 						</ul>
 					</li>
 					<li style="width:340px;">
 						<h4>CONECTE-SE</h4>
+						<div class="fb-like-box" data-href="https://www.facebook.com/photoplaybr" data-width="260" data-height="260" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"></div>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<div id="foot2">
 			<div class="mil_content">
+				<div class="footcopyright">
+					<h5 style="color: #1b368a">PHOTOPLAY - 2015 - © TODOS OS DIREITOS RESERVADOS</h5>
+				</div>
 
+				<div class="footsign">
+					<img src="{{STATIC_URL}}img/apexdesign.png">
+				</div>	
 			</div>
 		</div>
 	</div>
