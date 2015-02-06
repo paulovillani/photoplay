@@ -32,6 +32,9 @@
         $.datepicker.setDefaults($.datepicker.regional['br']);
         $( ".datepicker" ).datepicker( $.datepicker.regional[ "fr" ] );
 
+        $('#municipios_uf option:contains("--")').prop('disabled', true).text("Estado");
+        $('#id_municipios option:contains("--")').prop('disabled', true).text("Cidade");
+
 	});
 </script>
 <style type="text/css">
