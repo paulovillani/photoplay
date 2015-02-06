@@ -17,16 +17,16 @@ class ContactForm(forms.Form):
 		required=True, 
 		label="QUAL TIPO DE EVENTO?"
 	)
+	municipios = forms.IntegerField(
+		label=u"QUAL A LOCALIZAÇÃO DO EVENTO?",
+		widget=SelectMunicipioWidget,
+		required=True
+	)
 	name = forms.CharField(
 		label="PREENCHA OS CAMPOS ABAIXO",
 		widget=forms.TextInput(
             attrs={"placeholder": u"Seu nome (obrigatório)"}), 
 		required=True,
-	)
-	municipios = forms.IntegerField(
-		label=u"Estado - Cidade",
-		widget=SelectMunicipioWidget,
-		required=True
 	)
 	email = forms.EmailField(
 		label="",
