@@ -23,6 +23,19 @@
 			    $obj.css('background-position', bgpos );
 		    });
 	    });
+
+	    $(document).click(function(event) { 
+	    	console.log($(event.target).closest('.dropdown-menu'))
+	    	if(!$(event.target).closest('.dropdown-menu').length) {
+		    	if($('.dropdown-menu').is(":visible")) {
+		    		$('.dropdown-menu').toggleClass('dropdown-menu_open');
+		    	}
+		    }
+	    }); 
+
+	    $('#open-drop').click(function() {
+	    	$('.dropdown-menu').toggleClass('dropdown-menu_open');
+	    });
 	});
 
 	</script>
@@ -256,6 +269,10 @@
 		    top: 100%;
 		    z-index: 1000;
 		    line-height: 25px;
+		    display: none;
+		}
+		.dropdown-menu_open{
+			display: block;
 		}
 		.caret{
 			border-color: #fff transparent -moz-use-text-color;
@@ -278,7 +295,7 @@
 					<ul>
 						<li><a href="{% url 'Portal' %}"><img src="{{STATIC_URL}}img/logo.png"></a></li>
 						<li style="margin-left: 25px;">
-							<a href="#">
+							<a id="open-drop" href="#">
 								<h2>Produtos</h2>
 								<b class="caret"></b>
 							</a>

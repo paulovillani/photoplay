@@ -13,7 +13,7 @@ class PortalPhotoLivroView(TemplateView):
 	template_name = "produtos_photolivro.html"
 
 class PortalPhotoLembrancaView(TemplateView):
-	template_name = "produtos_photolembraca.html"
+	template_name = "produtos_photolembranca.html"
 
 class PortalPhotoGramView(TemplateView):
 	template_name = "produtos_photogram.html"
