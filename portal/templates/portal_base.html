@@ -163,7 +163,6 @@
 			background-color: #20409A;
 		}
 		#foot2{
-			margin-top: 30px;
 			height: 70px;
 		}
 		.mil_content{
@@ -286,10 +285,16 @@
 			margin: 15px 0 0 0;
 		}
 		.footsign{
-			float: right;
+			display: table-cell;
+			position: static;
+			text-align: right;
+			vertical-align: middle;
 		}
 		.footcopyright{
-			float: left;
+			display: table-cell;
+			position: static;
+			text-align: left;
+			vertical-align: middle;
 		}
 		
 	</style>
@@ -347,18 +352,18 @@
 						<ul align="right" id="foot1_col_1">
 							<li>
 								<h4>CONTATO</h4>
-								<p>(14) 9 9853-8758</p>
+								<p style="margin-top:20px;">(14) 9 9853-8758</p>
 								<p style="margin-top:15px;">equipe@photoplay.com.br</p>
 							</li>
 							<li>
 								<h4>EMPRESA</h4>
-								<p>Rua Monsenhor Victor Ribeiro Mazzei, 37</p>
+								<p style="margin-top:20px;">Rua Monsenhor Victor Ribeiro Mazzei, 37</p>
 								<p>Jardim Aeroporto</p>
 								<p>Marília - SP</p>
 							</li>
 							<li>
 								<h4>PARCEIRO COMERCIAL</h4>
-								<p>Quer oferecer os serviços PhotoPlay para seu clientes?</p>
+								<p style="margin-top:20px; width:230px">Quer oferecer os serviços PhotoPlay para seu clientes?</p>
 							</li>
 							<li>
 								<h4>SIGA-NOS</h4>
@@ -368,13 +373,13 @@
 					</li>
 					<li style="width:260px; float:right; margin-top:50px">
 						<h4>CONECTE-SE</h4>
-						<div style="background-color: white;" class="fb-like-box" data-href="https://www.facebook.com/photoplaybr" data-width="260" data-height="260" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"></div>
+						<div style="background-color: white; margin-top:20px;" class="fb-like-box" data-href="https://www.facebook.com/photoplaybr" data-width="260" data-height="260" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"></div>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<div id="foot2">
-			<div class="mil_content">
+			<div class="mil_content" style="position: relative; display: table; height: 100%;">
 				<div class="footcopyright">
 					<h5 style="color: #1b368a">PHOTOPLAY - 2015 - © TODOS OS DIREITOS RESERVADOS</h5>
 				</div>
