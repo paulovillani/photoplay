@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, url
 from portal import views
 from portal.views import (PortalHomeView, PortalContatoView, PortalPhotoLivroView, PortalPhotoLembrancaView,
-							PortalPhotoGramView, PortalPhotoProjecaoView, PortalPhotoEmpresaView)
+							PortalPhotoGramView, PortalPhotoProjecaoView, PortalPhotoEmpresaView, enviar_contato,
+							)
 
 urlpatterns = patterns('',
 	url(r'^/?$',  PortalHomeView.as_view(), name="Portal"),
@@ -11,4 +12,5 @@ urlpatterns = patterns('',
 	url(r'^photoprojecao/?$',  PortalPhotoProjecaoView.as_view(), name="PhotoProjecao"),
 	url(r'^photoempresa/?$',  PortalPhotoEmpresaView.as_view(), name="PhotoEmpresa"),
 	url(r'^contato/?$',  PortalContatoView.as_view(), name="Contato"),
+	url(r'^enviar_contato/?$',  enviar_contato, name="EnviarContato"),
 )

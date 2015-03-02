@@ -4,8 +4,6 @@
 {% block title %}
 
 {% endblock %}
-
-
 {% block head %}
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -229,34 +227,22 @@
 		box-shadow: 0 -5px 0 rgba(0,0,0,0.2) inset;
 		-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
 		-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
-	}
+		}
 	.cContatoForm input[type="submit"]:hover{
-	}
+		}
 	.cContatoForm input[type="submit"]:active{
 		box-shadow: none;
 		background: rgba(80, 184, 72, 0.70); /* FF3.6+ */
-	}
-	ul.errorlist{
-		margin: 0;
-	}
-	.errorlist li{
-		color: red;
-	}
-
+		}
 </style>
 {% endblock %}
 
-
 {% block content %}
+
 <div id="parallax1" class="bgParallax" data-speed="9"></div>
 <div class="cContato"> 
-	<div>
-		<form class="cContatoForm" action="/enviar_contato/" method="post">
-			{% csrf_token %}
-			{{ contact_form.media }}
-			{{contact_form}}
-			<input style="padding: 0;" type="submit" value="Enviar Contato" />
-		</form>
+	<div style="text-align: center;">
+		<h1 style="font-size: 18px; font-weight: 700; margin-top: 60px; color: #213f9a;">Obrigado pelo contato, retornaremos em breve !</h1>
 	</div>
 	<div class="cContatoText">
 		<h3 style="font-size: 28px; font-weight: 700; color: #213f9a;">DEIXE SEU EVENTO</h1>
