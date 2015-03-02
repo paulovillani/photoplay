@@ -57,10 +57,10 @@ def enviar_contato(request):
 			cidade = a.nome
 			uf = a.uf.nome
 
-			msg = u"O usuário '"+name+"', email:"+email+", enviou um contato pelo site.\n"
+			msg = u"O usuário '"+name+"', email: "+email+", enviou um contato pelo site.\n"
 			msg+= u"Tipo de serviço: "+service_type+"\n"
 			msg+= u"Cidade: "+cidade+", Estado: "+uf+"\n"
-			msg+= "Dia do evento: "+str(date_start)
+			msg+= "Dia do evento: "+str(date_start)+"\n"
 			msg+= u"Mensagem: "+message
 
 
