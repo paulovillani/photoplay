@@ -57,11 +57,12 @@ def enviar_contato(request):
 			cidade = a.nome
 			uf = a.uf.nome
 
-			msg = "O usuário '"+name+"', email:"+email+", envio um contato pelo site.\n"
-			msg+= "Tipo de serviço: "+service_type+"\n"
-			msg+= "Cidade: "+cidade+", Estado: "+uf+"\n"
-			msg+= "Dia do evento: "+date_start
-			msg+= "Mensagem: "+message
+			msg = u"O usuário '"+name+"', email:"+email+", enviou um contato pelo site.\n"
+			msg+= u"Tipo de serviço: "+service_type+"\n"
+			msg+= u"Cidade: "+cidade+", Estado: "+uf+"\n"
+			msg+= u"Dia do evento: "+date_start
+			msg+= u"Mensagem: "+message
+
 
 			send_mail("Contato pelo site", msg, 'noreply@photoplay.com.br', 
 				['equipe@photoplay.com.br', 'contato@photosite.webfactional.com'] )
