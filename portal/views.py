@@ -68,8 +68,6 @@ def enviar_contato(request):
 				['equipe@photoplay.com.br', 'contato@photosite.webfactional.com'] )
 
 
-			print service_type, cidade, uf, name, email, date_start, message
-
 			return render(request, 'contato_sucesso.html')
 
     # if a GET (or any other method) we'll create a blank form
