@@ -1,11 +1,18 @@
 from django.conf.urls import patterns, url
 from portal import views
+from portal.sitemap import *
 from portal.views import (PortalHomeView, PortalContatoView, PortalPhotoLivroView, PortalPhotoLembrancaView,
 							PortalPhotoGramView, PortalPhotoProjecaoView, PortalPhotoEmpresaView, enviar_contato,
 							)
 
+sitemaps = {
+    'pages':PortalSitemap(['Portal', 'PhotoLivro', 'PhotoLembranca', 'PhotoGram', 'PhotoProjecao',
+     'PhotoEmpresa', 'Contato']),
+}
+
 urlpatterns = patterns('',
 	url(r'^/?$',  PortalHomeView.as_view(), name="Portal"),
+	url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
 	url(r'^photolivro/?$',  PortalPhotoLivroView.as_view(), name="PhotoLivro"),
 	url(r'^photolembranca/?$',  PortalPhotoLembrancaView.as_view(), name="PhotoLembranca"),
 	url(r'^photogram/?$',  PortalPhotoGramView.as_view(), name="PhotoGram"),
