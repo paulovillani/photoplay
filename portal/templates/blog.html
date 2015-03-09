@@ -1,0 +1,186 @@
+{% extends 'portal_base.html' %}
+
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+</script>
+<style type="text/css">
+	#header{
+		height: 100px;
+		background: none;z
+	}
+	#header_container{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* FF3.6+ */;
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(33, 63, 154, 1); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* W3C */	
+		position: fixed;
+		z-index: 999;
+	}
+	.cHeader{
+		background-color: rgb(80,184,72);
+		height: 100px; 
+		width: 1400px;
+	}
+	.cHeaderContent{
+		width: 1000px;
+		left: 50%;
+		margin-left: -500px;
+		position: relative;
+	}
+	.cHeader ul{
+		list-style: outside none none;
+		margin: 0;
+		padding: 0;
+	}
+	.cHeader li{
+		float: left;
+		margin: 30px 11px 0 0;
+	}
+	.cHeader h1{
+		color: white;
+		font-size: 32px;
+		margin: 0;
+	}
+	.blogcontent{
+		width: 1000px;
+		position: relative;
+		left: 50%;
+		margin-left: -500px;
+		overflow: auto;
+		overflow: hidden;
+		background-color: white;
+	}
+	}
+	.posts{
+		width: 590px;
+		height: 1000px;
+	}
+	.ebook{
+		width: 590px;
+		height: 170px;
+		background-color: #6d82e1;
+
+	}
+	.ebook input[type="button"]{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(183, 183, 183);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(183, 183, 183); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(183, 183, 183); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(183, 183, 183); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(183, 183, 183); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(183, 183, 183); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(183, 183, 183); /* W3C */
+		box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		border-radius: 10px;
+		border: none;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 12px;
+		font-weight: 900;
+		height: 40px;
+		width: 190px;
+		margin-top: 20px
+	}
+	.ebook input[type="button"]:active{
+		box-shadow: none;
+		background: rgb(192, 192, 192); /* FF3.6+ */
+	}
+	.tituloebook {
+		font-size: 20px;
+		color: white;
+	}
+	.textebook{
+		font-family: "Montserrat",sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		color: white;
+	}
+	.posts{
+		width: 590px;
+		height: 200px;
+	}
+	.postinfo{
+		width: 470px;
+		height: 20px;
+	}
+	.contentpost{
+		width: 430px;
+		height: 75px;
+		float: right;
+	}
+	.postdescricao{
+		font-family: "Montserrat",sans-serif;
+		font-size: 10px;
+		font-weight: 400;
+		color: #888888;
+
+	}
+	.titulopost{
+		font-size: 18px;
+		color: #3236a8;
+	}
+	.textopost{
+		font-family: "Lato",sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		color: #888888;
+	}
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="blogcontent">
+	<div class="posts">
+		<div class="ebook">
+			<h1 class="tituloebook"> MATERIAIS GRATUITOS SOBRE CASAMENTO</h1>
+			<p class="textebook">E-books e guias com dicas e ideias para te ajudar na organização.</p>
+			<a href="#"><input type="button" value="BAIXAR AGORA"></a>
+		</div>
+
+		<div class="posts">
+			<div class="postimg"> 
+				<img src="{{STATIC_URL}}img/casamento.png">
+			</div>
+
+			<div class="postinfo">
+				<img src="{{STATIC_URL}}img/icon8_b.png">
+				<p class="postdescricao">30 COMENTÁRIOS</p>
+
+				<img src="{{STATIC_URL}}img/icon9_b.png">
+				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
+			</div>
+
+			<div class="contentpost">
+				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
+				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div>
+
+
+	</div>
+
+</div>
+
+{% endblock %}

@@ -3,7 +3,7 @@ from portal import views
 from portal.sitemap import *
 from portal.views import (PortalHomeView, PortalContatoView, PortalPhotoLivroView, PortalPhotoLembrancaView,
 							PortalPhotoGramView, PortalPhotoProjecaoView, PortalPhotoEmpresaView, enviar_contato,
-							)
+							PortalBlogView,)
 
 sitemaps = {
     'pages':PortalSitemap(['Portal', 'PhotoLivro', 'PhotoLembranca', 'PhotoGram', 'PhotoProjecao',
@@ -20,4 +20,5 @@ urlpatterns = patterns('',
 	url(r'^photoempresa/?$',  PortalPhotoEmpresaView.as_view(), name="PhotoEmpresa"),
 	url(r'^contato/?$',  PortalContatoView.as_view(), name="Contato"),
 	url(r'^enviar_contato/?$',  enviar_contato, name="EnviarContato"),
-)
+	url(r'^blog/?$',  PortalBlogView.as_view(), name="Blog"),
+	)

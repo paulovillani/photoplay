@@ -26,6 +26,9 @@ class PortalPhotoProjecaoView(TemplateView):
 class PortalPhotoEmpresaView(TemplateView):
 	template_name = "produtos_photoempresa.html"
 
+class PortalBlogView(TemplateView):
+	template_name = "blog.html"	
+
 class PortalContatoView(TemplateView):
 	template_name = "contato.html"
 
