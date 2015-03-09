@@ -1,19 +1,14 @@
 # -*- coding: utf-8 -*-
 from django import forms
 from municipios.widgets import SelectMunicipioWidget
-
-SERVICE_CHOIVCES = (('casamento', 'Casamento'),
-					('aniversario', u'Aniversário'),
-					('formatura', 'Formatura'),
-					('corporativos', 'Corporativo'),
-					('outro', 'Outro'))
+from portal.models import EVENT_CHOICES
 
 class ContactForm(forms.Form):
 	service_type = forms.ChoiceField(
 		# widget=forms.TextInput(
 		#     attrs={"placeholder": u"Cidade"}),
 		widget=forms.RadioSelect,
-		choices = SERVICE_CHOIVCES,
+		choices = EVENT_CHOICES,
 		required=True, 
 		label="QUAL TIPO DE EVENTO?"
 	)
