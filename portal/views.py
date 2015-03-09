@@ -5,6 +5,7 @@ from django.views.generic import ListView, TemplateView, DetailView, FormView
 from forms import ContactForm
 from django.core.mail import send_mail
 from municipios.models import Municipio, UF
+from django.db.models import Q
 
 # Create your views here.
 
@@ -62,6 +63,20 @@ def enviar_contato(request):
 			msg+= u"Cidade: "+cidade+", Estado: "+uf+"\n"
 			msg+= "Dia do evento: "+str(date_start)+"\n"
 			msg+= u"Mensagem: "+message
+
+			try:
+				contato = Contact.objects.get(Q(email=email))
+			except Contact.DoesNotExist:
+				contato = Contact(
+					name = name,
+					email = email,
+					city = cidade,
+					state = uf,
+					)
+				contato.save()
+
+
+
 
 
 			send_mail("Contato pelo site", msg, 'noreply@photoplay.com.br', 
