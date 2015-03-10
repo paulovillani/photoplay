@@ -6,6 +6,8 @@ from forms import ContactForm
 from django.core.mail import send_mail
 from municipios.models import Municipio, UF
 from django.db.models import Q
+from portal.models import Contact, Budget, PodioConfig
+from pypodio2 import api
 
 # Create your views here.
 
@@ -74,13 +76,43 @@ def enviar_contato(request):
 					name = name,
 					email = email,
 					city = cidade,
-					state = uf,
-					)
+					state = a.uf.uf,
+				)
 				contato.save()
 
+			orcamento = Budget(
+				event_type = service_type,
+				contact = contato,
+				date = date_start,
+				message = message,
+			)
+			orcamento.save()
+			# podio = PodioConfig.objects.get(pk=1)
 
+			# c = api.OAuthClient(
+			#     podio.client_id,
+			#     podio.client_secret,
+			#     podio.username,
+			#     podio.password,    
+			# )
 
+			# item = {
+			# 	"fields":[{
+			# 		"company-or-organisation": name,
+			# 		"email": email,
+			# 		"sales-contact": 2758134,
+			# 		"tipo-de-evento": 1,
+			# 		"status2": 0,
+			# 		"next-follow-up": {"start":"2015-03-11 00:00:00","end":"2112-01-31 00:00:00"},
+			# 		"street-address": "",
+			# 		"city": cidade,
+			# 		"state-provins-or-territory": a.uf.uf,
+			# 		"address": ""
+			# 	}]
+			# }
+			# print item
 
+			# c.Item.create(int(podio.app_id), item)
 
 			send_mail("Contato pelo site", msg, 'noreply@photoplay.com.br', 
 				['equipe@photoplay.com.br', 'contato@photosite.webfactional.com'] )
