@@ -61,11 +61,6 @@
 		overflow: hidden;
 		background-color: white;
 	}
-	}
-	.posts{
-		width: 590px;
-		height: 1000px;
-	}
 	.ebook{
 		width: 590px;
 		height: 170px;
@@ -93,7 +88,7 @@
 		font-weight: 900;
 		height: 40px;
 		width: 190px;
-		margin-top: 20px
+		margin: 0 0 0 30px;
 	}
 	.ebook input[type="button"]:active{
 		box-shadow: none;
@@ -102,25 +97,31 @@
 	.tituloebook {
 		font-size: 20px;
 		color: white;
+		padding: 30px 0 0 30px;
 	}
 	.textebook{
 		font-family: "Montserrat",sans-serif;
 		font-size: 14px;
 		font-weight: 400;
 		color: white;
+		padding: 0 0 0 30px;
 	}
 	.posts{
 		width: 590px;
 		height: 200px;
+		margin-top: 80px;
 	}
 	.postimg{
 		width: 140px;
 		height: 140px;
 		float: left;
+		margin-top: 10px;
 	}
 	.postinfo{
 		width: 470px;
 		height: 20px;
+		display: inline;
+		margin: 0 60px 0 20px;
 	}
 	.postinfo img,.postinfo p{
 		display: inline-block;
@@ -128,7 +129,6 @@
 	}
 	.contentpost{
 		width: 430px;
-		height: 75px;
 		float: right;
 	}
 	.postdescricao{
@@ -144,19 +144,46 @@
 	}
 	.textopost{
 		font-family: "Lato",sans-serif;
-		font-size: 14px;
+		font-size: 12px;
 		font-weight: 400;
 		color: #888888;
 	}
-
-
+	input[type="button"].btleiamais {
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(5, 87, 160);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(5, 87, 160); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(5, 87, 160); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(5, 87, 160); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* W3C */
+		border-radius: 10px;
+		border: none;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 12px;
+		font-weight: 900;
+		height: 40px;
+		width: 140px;
+		position: relative;
+	}
+	input[type="button"].btleiamais:active{
+		box-shadow: none;
+		background: rgb(5, 87, 160); /* FF3.6+ */
+	}	
+	#link{
+		position: relative;
+		left: 450px;
+		top: 0px;
+	}
 </style>
 {% endblock %}
 
 {% block content %}
 
 <div class="blogcontent">
-	<div class="posts">
+	<div class="todosposts">
 		<div class="ebook">
 			<h1 class="tituloebook"> MATERIAIS GRATUITOS SOBRE CASAMENTO</h1>
 			<p class="textebook">E-books e guias com dicas e ideias para te ajudar na organização.</p>
@@ -180,7 +207,147 @@
 				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
 				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
 			</div>
+				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
+		</div>
 
+		<div class="posts">
+			<div class="postimg"> 
+				<img src="{{STATIC_URL}}img/casamento.png">
+			</div>
+
+			<div class="postinfo">
+				<img src="{{STATIC_URL}}img/icon8_b.png">
+				<p class="postdescricao">30 COMENTÁRIOS</p>
+
+				<img src="{{STATIC_URL}}img/icon9_b.png">
+				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
+			</div>
+
+			<div class="contentpost">
+				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
+				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
+			</div>
+				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
+		</div>
+
+		<div class="posts">
+			<div class="postimg"> 
+				<img src="{{STATIC_URL}}img/casamento.png">
+			</div>
+
+			<div class="postinfo">
+				<img src="{{STATIC_URL}}img/icon8_b.png">
+				<p class="postdescricao">30 COMENTÁRIOS</p>
+
+				<img src="{{STATIC_URL}}img/icon9_b.png">
+				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
+			</div>
+
+			<div class="contentpost">
+				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
+				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
+			</div>
+				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
+		</div>
+
+		<div class="posts">
+			<div class="postimg"> 
+				<img src="{{STATIC_URL}}img/casamento.png">
+			</div>
+
+			<div class="postinfo">
+				<img src="{{STATIC_URL}}img/icon8_b.png">
+				<p class="postdescricao">30 COMENTÁRIOS</p>
+
+				<img src="{{STATIC_URL}}img/icon9_b.png">
+				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
+			</div>
+
+			<div class="contentpost">
+				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
+				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
+			</div>
+				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
+		</div>
+
+		<div class="posts">
+			<div class="postimg"> 
+				<img src="{{STATIC_URL}}img/casamento.png">
+			</div>
+
+			<div class="postinfo">
+				<img src="{{STATIC_URL}}img/icon8_b.png">
+				<p class="postdescricao">30 COMENTÁRIOS</p>
+
+				<img src="{{STATIC_URL}}img/icon9_b.png">
+				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
+			</div>
+
+			<div class="contentpost">
+				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
+				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
+			</div>
+				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
+		</div>
+
+		<div class="posts">
+			<div class="postimg"> 
+				<img src="{{STATIC_URL}}img/casamento.png">
+			</div>
+
+			<div class="postinfo">
+				<img src="{{STATIC_URL}}img/icon8_b.png">
+				<p class="postdescricao">30 COMENTÁRIOS</p>
+
+				<img src="{{STATIC_URL}}img/icon9_b.png">
+				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
+			</div>
+
+			<div class="contentpost">
+				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
+				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
+			</div>
+				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
+		</div>
+
+		<div class="posts">
+			<div class="postimg"> 
+				<img src="{{STATIC_URL}}img/casamento.png">
+			</div>
+
+			<div class="postinfo">
+				<img src="{{STATIC_URL}}img/icon8_b.png">
+				<p class="postdescricao">30 COMENTÁRIOS</p>
+
+				<img src="{{STATIC_URL}}img/icon9_b.png">
+				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
+			</div>
+
+			<div class="contentpost">
+				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
+				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
+			</div>
+				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
+		</div>
+
+		<div class="posts">
+			<div class="postimg"> 
+				<img src="{{STATIC_URL}}img/casamento.png">
+			</div>
+
+			<div class="postinfo">
+				<img src="{{STATIC_URL}}img/icon8_b.png">
+				<p class="postdescricao">30 COMENTÁRIOS</p>
+
+				<img src="{{STATIC_URL}}img/icon9_b.png">
+				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
+			</div>
+
+			<div class="contentpost">
+				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
+				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
+			</div>
+				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
 		</div>
 
 	</div>
@@ -190,6 +357,9 @@
 
 	</div>
 
+	<div class="contador">
+		
+	</div>
 </div>
 
 {% endblock %}
