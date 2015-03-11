@@ -1,5 +1,4 @@
 from __future__ import print_function
-from cms.sitemaps import CMSSitemap
 from django.conf.urls import include, url, patterns
 from django.conf.urls.static import static
 from django.contrib import admin

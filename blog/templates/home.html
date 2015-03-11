@@ -1,5 +1,5 @@
-{% extends 'base.html' %}
-
+{% extends 'portal_base.html' %}
+{% load zinnia i18n %}
 
 {% block title %}
 
@@ -60,6 +60,9 @@
 		overflow: auto;
 		overflow: hidden;
 		background-color: white;
+	}
+	.todosposts{
+		float: left;
 	}
 	.ebook{
 		width: 590px;
@@ -174,8 +177,189 @@
 	}	
 	#link{
 		position: relative;
-		left: 450px;
+		left: 300px;
 		top: 0px;
+	}
+	.contador{
+		font-family: "Montserrat",sans-serif;
+		font-size: 13px;
+		font-weight: 900;
+		color: #fff;
+		left: 270px;
+		padding: 80px 0 80px 270px;
+	}
+	.contador a{
+		text-decoration: none;
+	}
+	.pagSel{
+		font-size: 15px;
+	}
+	.menulateral{
+		width: 260px;
+		float: right;
+	}
+	.newsletter{
+		background: #d1d8fc;
+		width: 260px;
+		height: 320px;
+	}
+	.newsletter input[type="submit"]{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(30, 177, 40, 0.70); /* FF3.6+ */
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(30, 177, 40, 0.70); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(30, 177, 40, 0.70); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(30, 177, 40, 0.70); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(30, 177, 40, 0.70); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(30, 177, 40, 0.70); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(30, 177, 40, 0.70); /* W3C */
+		border-radius: 10px;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 14px;
+		font-weight: 900;
+		height: 40px;
+		width: 220px;
+		box-shadow: 0 -4px 0 rgba(0,0,0,0.2) inset;
+		-moz-box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.2) inset;
+		-webkit-box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.2) inset;
+		margin: 30px 0 0 20px;
+	}
+	.newsletter input[type="submit"]:hover{
+	}
+	.newsletter input[type="submit"]:active{
+		box-shadow: none;
+		background: rgba(30, 177, 40, 0.70); /* FF3.6+ */
+	}
+	.titulo_newsletter{
+		font-size: 16px;
+		color: #3236a8;
+		padding: 30px 0 0 20px;
+	}
+	.linha input{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 40px;
+    	width: 220px;
+    	margin: 20px 0 0 20px;
+    	padding-left: 20px;
+
+	}
+	.titulo_categoria{
+		font-size: 16px;
+		color: #333333;
+		padding: 60px 0 0 0;
+	}
+	.categorias{
+		font-family: "Montserrat",sans-serif;
+		font-size: 13px;
+		font-weight: 400;
+	}
+	.categorialist{
+		padding-top: 20px;
+	}
+	.categorialist a{
+		display: block;
+	}
+	.social input[type="button"],#facebook{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(61, 79, 160);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(61, 79, 160); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(61, 79, 160); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(61, 79, 160); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(61, 79, 160); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(61, 79, 160); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(61, 79, 160); /* W3C */
+		border-radius: 0px;
+		border: none;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 14px;
+		font-weight: 900;
+		height: 40px;
+		width: 260px;
+		position: relative;
+	}
+	.social input[type="button"],#facebook:hover{
+	}
+	.social input[type="button"],#facebook:active{
+		box-shadow: none;
+		background: rgba(61, 79, 160, 0.70); /* FF3.6+ */
+	}
+	.social input[type="button"],#twitter{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(76, 196, 246);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(76, 196, 246); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(76, 196, 246); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(76, 196, 246); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(76, 196, 246); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(76, 196, 246); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(76, 196, 246); /* W3C */
+		border-radius: 0px;
+		border: none;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 14px;
+		font-weight: 900;
+		height: 40px;
+		width: 260px;
+		position: relative;
+	}
+	.social input[type="button"],#twitter:hover{
+	}
+	.social input[type="button"],#twitter:active{
+		box-shadow: none;
+		background: rgba(76, 196, 246 0.70); /* FF3.6+ */
+	}
+	.social input[type="button"],#instagram{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(5, 87, 160);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(5, 87, 160); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(5, 87, 160); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(5, 87, 160); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* W3C */
+		border-radius: 0px;
+		border: none;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 14px;
+		font-weight: 900;
+		height: 40px;
+		width: 260px;
+		position: relative;
+	}
+	.social input[type="button"],#instagram:hover{
+	}
+	.social input[type="button"],#instagram:active{
+		box-shadow: none;
+		background: rgba(30, 177, 40, 0.70); /* FF3.6+ */
+	}
+	.social a{
+		position: relative;
+		top: 20px;
+		display: block;
+	}
+	.social img{
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		left: 50px;
+		margin: 10px 0 0 10px;
+	}
+	.maisrecentes{
+		font-family: "Montserrat",sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+	}
+	.postslist{
+		padding-top: 20px;
 	}
 </style>
 {% endblock %}
@@ -189,177 +373,138 @@
 			<p class="textebook">E-books e guias com dicas e ideias para te ajudar na organização.</p>
 			<a href="#"><input type="button" value="BAIXAR AGORA"></a>
 		</div>
+		{% for entry in entry_list %}
+			<div class="posts">
+				<div class="postimg"> 
+					<img src="'{{MEDIA_URL}}{{entry.image}}'">
+				</div>
 
-		<div class="posts">
-			<div class="postimg"> 
-				<img src="{{STATIC_URL}}img/casamento.png">
+				<div class="postinfo">
+					<img src="{{STATIC_URL}}img/icon8_b.png">
+					<p class="postdescricao">30 COMENTÁRIOS</p>
+
+					<img src="{{STATIC_URL}}img/icon9_b.png">
+					<p class="postdescricao">POSTADO EM: {{entry.creation_date|date:"d/m/Y"}}</p>
+				</div>
+
+				<div class="contentpost">
+					<h1 class="titulopost">{{entry.title|upper}}</h1>
+					<p class="textopost">
+					{% autoescape off %}
+						{{entry.excerpt|truncatewords_html:60}}
+					{% endautoescape %}
+					</p>
+				</div>
+				<a href="{% url 'Post' entry.slug %}" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
 			</div>
+		{% empty %}
+		    <p class="info">
+			    <a href="{% url 'admin:zinnia_entry_add' %}">{% trans "No entries yet." %}</a>
+		    </p>
+		{% endfor %}
 
-			<div class="postinfo">
-				<img src="{{STATIC_URL}}img/icon8_b.png">
-				<p class="postdescricao">30 COMENTÁRIOS</p>
+		{% if is_paginated %}
+		<div class="contador"> 
+			{% if page_obj.has_previous %}
+			<a href="{{view_link}}?page={{ page_obj.previous_page_number }}"><< POSTS RECENTES</a>
+			{% endif %} 
 
-				<img src="{{STATIC_URL}}img/icon9_b.png">
-				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
-			</div>
+			{% for pg in paginator.page_range %}
+				{%ifequal pg page_obj.number %}
+					<a class='pagSel' href="{{view_link}}?page={{pg}}">{{pg}}</a>
+				{% else %}
+					<a href="{{view_link}}?page={{pg}}">{{pg}}</a>
+				{% endifequal %}
+			{% endfor %}
 
-			<div class="contentpost">
-				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
-				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
-			</div>
-				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
+			{% if page_obj.has_next %}
+				<a href="{{view_link}}?page={{ page_obj.next_page_number }}">POSTS ANTIGOS >></a>
+			{% endif %}
+		</div>
+		{% endif %}
+	
+	</div>	
+	<div class="menulateral">
+		<div class="newsletter">
+			<h1 class="titulo_newsletter"> RECEBA DICAS<br />
+			IMPERDÍVEIS DIRETO<br />
+			NO SEU EMAIL</h1>
+			 <div class="linha"> 
+			 
+			  <input name="nome" type="text" id="nome" placeholder="Nome:"> 
+			   
+			  <input name="email" type="text" id="email" placeholder="Email:">
+			  
+			 </div> 
+
+			<a href="#"><input type="submit" value="QUERO RECEBER"></a>
 		</div>
 
-		<div class="posts">
-			<div class="postimg"> 
-				<img src="{{STATIC_URL}}img/casamento.png">
-			</div>
+		<div class="categorias">
+			<h1 class="titulo_categoria">CATEGORIAS</h1>
+			<div class="categorialist">
+				{% for cat in categories %}
+					<a href="{% url 'Category' cat.slug %}">{{cat|title}} ({{ cat.entries_published.count }})</a>
+				{% endfor %}
 
-			<div class="postinfo">
-				<img src="{{STATIC_URL}}img/icon8_b.png">
-				<p class="postdescricao">30 COMENTÁRIOS</p>
-
-				<img src="{{STATIC_URL}}img/icon9_b.png">
-				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
+				<!-- <a href="#">CATEGORIA 1 (20)</a> <br />
+				<a href="#">CATEGORIA 2 (20)</a> <br />
+				<a href="#">CATEGORIA 3 (20)</a> <br />
+				<a href="#">CATEGORIA 4 (20)</a> <br />
+				<a href="#">CATEGORIA 5 (20)</a> <br />
+				<a href="#">CATEGORIA 6 (20)</a> <br />
+				<a href="#">CATEGORIA 7 (20)</a> <br />
+				<a href="#">CATEGORIA 8 (20)</a> <br />
+				<a href="#">CATEGORIA 9 (20)</a> <br />
+				<a href="#">CATEGORIA 10 (20)</a> -->
 			</div>
-
-			<div class="contentpost">
-				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
-				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
-			</div>
-				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
 		</div>
 
-		<div class="posts">
-			<div class="postimg"> 
-				<img src="{{STATIC_URL}}img/casamento.png">
-			</div>
-
-			<div class="postinfo">
-				<img src="{{STATIC_URL}}img/icon8_b.png">
-				<p class="postdescricao">30 COMENTÁRIOS</p>
-
-				<img src="{{STATIC_URL}}img/icon9_b.png">
-				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
-			</div>
-
-			<div class="contentpost">
-				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
-				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
-			</div>
-				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
+		<div class="social">
+			<h1 class="titulo_categoria">SIGA A PHOTOPLAY</h1>
+			<a href="#" id="facebook"> 
+				<img src="{{STATIC_URL}}img/icon_facebook.png">
+				<input type="button" value="FACEBOOK">
+			</a>
+			<a href="#" id="twitter"> 
+				<img src="{{STATIC_URL}}img/icon_twitter.png">
+				<input type="button" value="TWITTER">
+			</a>
+			<a href="#" id="instagram"> 
+				<img src="{{STATIC_URL}}img/icon_instagram.png">
+				<input type="button" value="INSTAGRAM">
+			</a>
+			
 		</div>
 
-		<div class="posts">
-			<div class="postimg"> 
-				<img src="{{STATIC_URL}}img/casamento.png">
+		<div class="maisrecentes">
+			<h1 class="titulo_categoria">MAIS RECENTES</h1>
+			<div class="postslist">
+				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+				<br />
+				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+				<br />
+				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+				<br />
+				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+				<br />
+				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+				<br />
+				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+				<br />
+				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+				<br />
+				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+				<br />
+				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+				<br />
+				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a>
 			</div>
-
-			<div class="postinfo">
-				<img src="{{STATIC_URL}}img/icon8_b.png">
-				<p class="postdescricao">30 COMENTÁRIOS</p>
-
-				<img src="{{STATIC_URL}}img/icon9_b.png">
-				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
-			</div>
-
-			<div class="contentpost">
-				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
-				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
-			</div>
-				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
-		</div>
-
-		<div class="posts">
-			<div class="postimg"> 
-				<img src="{{STATIC_URL}}img/casamento.png">
-			</div>
-
-			<div class="postinfo">
-				<img src="{{STATIC_URL}}img/icon8_b.png">
-				<p class="postdescricao">30 COMENTÁRIOS</p>
-
-				<img src="{{STATIC_URL}}img/icon9_b.png">
-				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
-			</div>
-
-			<div class="contentpost">
-				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
-				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
-			</div>
-				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
-		</div>
-
-		<div class="posts">
-			<div class="postimg"> 
-				<img src="{{STATIC_URL}}img/casamento.png">
-			</div>
-
-			<div class="postinfo">
-				<img src="{{STATIC_URL}}img/icon8_b.png">
-				<p class="postdescricao">30 COMENTÁRIOS</p>
-
-				<img src="{{STATIC_URL}}img/icon9_b.png">
-				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
-			</div>
-
-			<div class="contentpost">
-				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
-				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
-			</div>
-				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
-		</div>
-
-		<div class="posts">
-			<div class="postimg"> 
-				<img src="{{STATIC_URL}}img/casamento.png">
-			</div>
-
-			<div class="postinfo">
-				<img src="{{STATIC_URL}}img/icon8_b.png">
-				<p class="postdescricao">30 COMENTÁRIOS</p>
-
-				<img src="{{STATIC_URL}}img/icon9_b.png">
-				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
-			</div>
-
-			<div class="contentpost">
-				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
-				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
-			</div>
-				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
-		</div>
-
-		<div class="posts">
-			<div class="postimg"> 
-				<img src="{{STATIC_URL}}img/casamento.png">
-			</div>
-
-			<div class="postinfo">
-				<img src="{{STATIC_URL}}img/icon8_b.png">
-				<p class="postdescricao">30 COMENTÁRIOS</p>
-
-				<img src="{{STATIC_URL}}img/icon9_b.png">
-				<p class="postdescricao">POSTADO EM: 12/05/2013</p>
-			</div>
-
-			<div class="contentpost">
-				<h1 class="titulopost">Maecenas sed diam eget risus varius blandit sit</h1>
-				<p class="textopost">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, Nulla vit, a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. Donec id elit non miporta a pharetra augue. Nulla vit, a pharetra augue. Donec id elit non miporta a pharetra augue. </p>
-			</div>
-				<a href="#" id="link"><input type="button" class="btleiamais" value="+ LEIA MAIS"></a>
 		</div>
 
 	</div>
 
-	<div>
-
-
-	</div>
-
-	<div class="contador">
-		
-	</div>
+	
 </div>
 
 {% endblock %}
