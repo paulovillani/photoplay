@@ -5,7 +5,6 @@ django-cms>=3.0
 # lock-in their version, specify them
 Django>=1.7
 
-South==1.0.2 # Only needed for Django < 1.7
 django-mptt==0.6.1
 django-sekizai==0.7
 django-classy-tags==0.5
@@ -19,3 +18,12 @@ django-filer==0.9.8
 cmsplugin-filer==0.10.1
 django-reversion==1.8
 mysql-python
+djangocms-link
+djangocms-snippet
+djangocms-style
+djangocms-column
+djangocms-grid
+djangocms-oembed
+djangocms-table
+djangocms_text_ckeditor
+cmsplugin-blog

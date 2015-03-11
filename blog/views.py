@@ -4,4 +4,4 @@ from django.views.generic import ListView, TemplateView, DetailView, FormView
 # Create your views here.
 
 class PortalBlogView(TemplateView):
-	template_name = "blog.html"	
+	template_name = "home.html"	
