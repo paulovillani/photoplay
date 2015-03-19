@@ -2,3 +2,4 @@
 *.pyo
 settings.py
 media/
+static/

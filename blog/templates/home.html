@@ -260,7 +260,7 @@
 	.categorialist{
 		padding-top: 20px;
 	}
-	.categorialist a{
+	.categorialist a, .postslist a{
 		display: block;
 	}
 	.social input[type="button"],#facebook{
@@ -424,86 +424,8 @@
 		{% endif %}
 	
 	</div>	
-	<div class="menulateral">
-		<div class="newsletter">
-			<h1 class="titulo_newsletter"> RECEBA DICAS<br />
-			IMPERDÍVEIS DIRETO<br />
-			NO SEU EMAIL</h1>
-			 <div class="linha"> 
-			 
-			  <input name="nome" type="text" id="nome" placeholder="Nome:"> 
-			   
-			  <input name="email" type="text" id="email" placeholder="Email:">
-			  
-			 </div> 
-
-			<a href="#"><input type="submit" value="QUERO RECEBER"></a>
-		</div>
-
-		<div class="categorias">
-			<h1 class="titulo_categoria">CATEGORIAS</h1>
-			<div class="categorialist">
-				{% for cat in categories %}
-					<a href="{% url 'Category' cat.slug %}">{{cat|title}} ({{ cat.entries_published.count }})</a>
-				{% endfor %}
-
-				<!-- <a href="#">CATEGORIA 1 (20)</a> <br />
-				<a href="#">CATEGORIA 2 (20)</a> <br />
-				<a href="#">CATEGORIA 3 (20)</a> <br />
-				<a href="#">CATEGORIA 4 (20)</a> <br />
-				<a href="#">CATEGORIA 5 (20)</a> <br />
-				<a href="#">CATEGORIA 6 (20)</a> <br />
-				<a href="#">CATEGORIA 7 (20)</a> <br />
-				<a href="#">CATEGORIA 8 (20)</a> <br />
-				<a href="#">CATEGORIA 9 (20)</a> <br />
-				<a href="#">CATEGORIA 10 (20)</a> -->
-			</div>
-		</div>
-
-		<div class="social">
-			<h1 class="titulo_categoria">SIGA A PHOTOPLAY</h1>
-			<a href="#" id="facebook"> 
-				<img src="{{STATIC_URL}}img/icon_facebook.png">
-				<input type="button" value="FACEBOOK">
-			</a>
-			<a href="#" id="twitter"> 
-				<img src="{{STATIC_URL}}img/icon_twitter.png">
-				<input type="button" value="TWITTER">
-			</a>
-			<a href="#" id="instagram"> 
-				<img src="{{STATIC_URL}}img/icon_instagram.png">
-				<input type="button" value="INSTAGRAM">
-			</a>
-			
-		</div>
-
-		<div class="maisrecentes">
-			<h1 class="titulo_categoria">MAIS RECENTES</h1>
-			<div class="postslist">
-				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
-				<br />
-				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
-				<br />
-				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
-				<br />
-				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
-				<br />
-				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
-				<br />
-				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
-				<br />
-				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
-				<br />
-				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
-				<br />
-				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
-				<br />
-				<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a>
-			</div>
-		</div>
-
-	</div>
-
+	
+	{% include 'lateral.html' %}
 	
 </div>
 

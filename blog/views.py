@@ -5,6 +5,7 @@ from zinnia.managers import PUBLISHED
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.core.urlresolvers import reverse
+from forms import NewsletterForm
 
 # Create your views here.
 
@@ -39,6 +40,8 @@ class BlogListView(ListView):
 	def get_context_data(self, **kwargs):
 		context = super(BlogListView, self).get_context_data(**kwargs)
 		context['categories'] = Category.objects.all()
+		context['form'] = NewsletterForm()
+		context['recent'] = Entry.objects.filter(status=PUBLISHED).order_by('-creation_date')[:8]
 
 	    # try:
 	    #     m = HomeMetaTags.objects.get(Q(location='B'))
@@ -59,6 +62,9 @@ class PostView(DetailView):
         return Entry.objects.filter(slug=self.kwargs.get('slug')).filter(status=PUBLISHED)
 
     def get_context_data(self, **kwargs):
-        context = super(PostView, self).get_context_data(**kwargs)
-        context['view_link'] = reverse(self.view_link, kwargs={'slug': self.kwargs.get('slug')})
-        return context
+		context = super(PostView, self).get_context_data(**kwargs)
+		context['categories'] = Category.objects.all()
+		context['form'] = NewsletterForm()
+		context['recent'] = Entry.objects.filter(status=PUBLISHED).order_by('-creation_date')[:8]
+
+		return context

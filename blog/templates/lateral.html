@@ -1,0 +1,69 @@
+<div class="menulateral">
+	<div class="newsletter">
+		<h1 class="titulo_newsletter"> RECEBA DICAS<br />
+		IMPERDÍVEIS DIRETO<br />
+		NO SEU EMAIL</h1>
+		 <div class="linha"> 
+		 	{% csrf_token %}
+		 	{{form}}
+		 </div> 
+
+		<a href="#"><input type="submit" value="QUERO RECEBER"></a>
+	</div>
+
+	<div class="categorias">
+		<h1 class="titulo_categoria">CATEGORIAS</h1>
+		<div class="categorialist">
+			{% for cat in categories %}
+				<a href="{% url 'Category' cat.slug %}">{{cat|title}} ({{ cat.entries_published.count }})</a>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="social">
+		<h1 class="titulo_categoria">SIGA A PHOTOPLAY</h1>
+		<a href="#" id="facebook"> 
+			<img src="{{STATIC_URL}}img/icon_facebook.png">
+			<input type="button" value="FACEBOOK">
+		</a>
+		<a href="#" id="twitter"> 
+			<img src="{{STATIC_URL}}img/icon_twitter.png">
+			<input type="button" value="TWITTER">
+		</a>
+		<a href="#" id="instagram"> 
+			<img src="{{STATIC_URL}}img/icon_instagram.png">
+			<input type="button" value="INSTAGRAM">
+		</a>
+		
+	</div>
+
+	<div class="maisrecentes">
+		<h1 class="titulo_categoria">MAIS RECENTES</h1>
+		<div class="postslist">
+		{% for entry in recent %}
+			<a href="{% url 'Post' entry.slug %}">{{entry.title|title}}</a> 
+		{% endfor %}
+
+			<!-- <br />
+			<br />
+			<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+			<br />
+			<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+			<br />
+			<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+			<br />
+			<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+			<br />
+			<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+			<br />
+			<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+			<br />
+			<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+			<br />
+			<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> <br />
+			<br />
+			<a href="#">Duis mollis, est non cotmmodo luctus, nisi erat porttitor ligula, lacinia oadio </a> -->
+		</div>
+	</div>
+
+</div>

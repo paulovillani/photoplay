@@ -16,8 +16,8 @@ class Contact(models.Model):
 
     name = models.CharField(max_length=256, verbose_name=u"Nome")
     email = models.EmailField(max_length=128)
-    city = models.CharField(max_length=128, verbose_name=u"Cidade")
-    state = models.CharField(max_length=2, verbose_name=u"Estado")
+    city = models.CharField(null=True, blank=True, max_length=128, verbose_name=u"Cidade")
+    state = models.CharField(null=True, blank=True, max_length=2, verbose_name=u"Estado")
 
     def __unicode__(self):
         return self.name
