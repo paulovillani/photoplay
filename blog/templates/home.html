@@ -212,7 +212,6 @@
 		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(30, 177, 40, 0.70); /* IE10+ */
 		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(30, 177, 40, 0.70); /* W3C */
 		border-radius: 10px;
-		border: 0;
 		color: white;
 		font-family: "Montserrat",sans-serif;
 		font-size: 14px;
@@ -264,7 +263,7 @@
 	.categorialist a, .postslist a{
 		display: block;
 	}
-	#facebook input[type="button"]{
+	.social input[type="button"],#facebook{
 		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(61, 79, 160);
 		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
 		rgb(61, 79, 160); /* FF3.6+ */
@@ -283,26 +282,14 @@
 		height: 40px;
 		width: 260px;
 		position: relative;
-		box-shadow: 0 -4px 0 rgba(0,0,0,0.2) inset;
-		-moz-box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.2) inset;
-		-webkit-box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.2) inset;
 	}
-	#facebook:hover input[type="button"]{
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgba(61, 79, 160, 0.9);
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
-		rgba(61, 79, 160, 0.9); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(61, 79, 160,0.9); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(61, 79, 160, 0.9); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(61, 79, 160, 0.9); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
-		rgba(61, 79, 160, 0.9); /* IE10+ */
-		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(61, 79, 160, 0.9); /* W3C */
+	.social input[type="button"],#facebook:hover{
 	}
-	#facebook:active  input[type="button"]{
+	.social input[type="button"],#facebook:active{
 		box-shadow: none;
-		background: rgba(61, 79, 160, 0.9);
+		background: rgba(61, 79, 160, 0.70); /* FF3.6+ */
 	}
-	#twitter input[type="button"]{
+	.social input[type="button"],#twitter{
 		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(76, 196, 246);
 		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
 		rgb(76, 196, 246); /* FF3.6+ */
@@ -321,35 +308,23 @@
 		height: 40px;
 		width: 260px;
 		position: relative;
-		box-shadow: 0 -4px 0 rgba(0,0,0,0.2) inset;
-		-moz-box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.2) inset;
-		-webkit-box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.2) inset;
 	}
-	#twitter:hover input[type="button"]{
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgba(76, 196, 246, 0.9);
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
-		rgba(76, 196, 246, 0.9); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(76, 196, 246, 0.9); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(76, 196, 246, 0.9); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(76, 196, 246, 0.9); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
-		rgba(76, 196, 246, 0.9); /* IE10+ */
-		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(76, 196, 246, 0.9); /* W3C */
+	.social input[type="button"],#twitter:hover{
 	}
-	#twitter:active input[type="button"]{
+	.social input[type="button"],#twitter:active{
 		box-shadow: none;
-		background: rgba(76, 196, 246 0.9); /* FF3.6+ */
+		background: rgba(76, 196, 246 0.70); /* FF3.6+ */
 	}
-	#instagram input[type="button"]{
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(235, 122, 61);
+	.social input[type="button"],#instagram{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(5, 87, 160);
 		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
-		rgb(235, 122, 61); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(235, 122, 61); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(235, 122, 61); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(235, 122, 61); /* Opera 11.10+ */
+		rgb(5, 87, 160); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(5, 87, 160); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* Opera 11.10+ */
 		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
-		rgb(235, 122, 61); /* IE10+ */
-		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(235, 122, 61); /* W3C */
+		rgb(5, 87, 160); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* W3C */
 		border-radius: 0px;
 		border: none;
 		color: white;
@@ -359,30 +334,17 @@
 		height: 40px;
 		width: 260px;
 		position: relative;
-		box-shadow: 0 -4px 0 rgba(0,0,0,0.2) inset;
-		-moz-box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.2) inset;
-		-webkit-box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.2) inset;
 	}
-	#instagram:hover input[type="button"]{
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgba(235, 122, 61, 0.9);
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
-		rgba(235, 122, 61, 0.9); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(235, 122, 61, 0.9); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(235, 122, 61, 0.9); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(235, 122, 61, 0.9); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
-		rgba(235, 122, 61, 0.9); /* IE10+ */
-		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(235, 122, 61, 0.9); /* W3C */
+	.social input[type="button"],#instagram:hover{
 	}
-	#instagram:active input[type="button"]{
+	.social input[type="button"],#instagram:active{
 		box-shadow: none;
-		background: rgba(235, 122, 61, 0.70); /* FF3.6+ */
+		background: rgba(30, 177, 40, 0.70); /* FF3.6+ */
 	}
 	.social a{
 		position: relative;
 		top: 20px;
 		display: block;
-		margin: 0 0 10px;
 	}
 	.social img{
 		position: absolute;
@@ -414,7 +376,7 @@
 		{% for entry in entry_list %}
 			<div class="posts">
 				<div class="postimg"> 
-					<img src="{{MEDIA_URL}}{{entry.image}}">
+					<img height="140px" width="140px" src="{{MEDIA_URL}}{{entry.image}}">
 				</div>
 
 				<div class="postinfo">
