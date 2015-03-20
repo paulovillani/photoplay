@@ -148,11 +148,11 @@
 		width: 31%;
 		height: 100%;
 		float: left;
-		margin: 30px 0 30px 0;
-		vertical-align: center;		
+		margin: 30px 0 30px 0;	
 	}
 	.titulo_postrelacionado{
 		font-size: 14px;
+		width: 140px;
 	}
 	.categorialist a, .postslist a{
 		display: block;
@@ -186,7 +186,7 @@
 		 		{% for relacionado in entry.related_published|slice:":3" %}
 					<div class="postrelacionado">
 						<a href="{% url 'Post' relacionado.slug %}">
-						<img src="{{MEDIA_URL}}{{relacionado.image}}">
+						<img height="140px" width="140px" src="{{MEDIA_URL}}{{relacionado.image}}">
 						<h1 class="titulo_postrelacionado">{{relacionado.title|title}}</h1></a>
 					</div>
 				{% endfor %}
