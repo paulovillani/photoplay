@@ -12,7 +12,7 @@ from pypodio2 import api
 # Create your views here.
 
 class PortalHomeView(TemplateView):
-    template_name = "portal_home.html"
+    template_name = "bootstrap_home.html"
 
 class PortalPhotoLivroView(TemplateView):
 	template_name = "produtos_photolivro.html"

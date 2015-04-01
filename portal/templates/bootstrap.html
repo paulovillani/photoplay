@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %} {% endblock %}</title>
+	<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.min.css">
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/home-ch.css" media="screen and (-webkit-min-device-pixel-ratio:0)"/>
+	<link href='http://fonts.googleapis.com/css?family=Lato|Montserrat' rel='stylesheet' type='text/css'>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Analytics -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-59532546-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<!-- PhotoPlay JS's -->
+	<script type="text/javascript">
+	$(document).ready(function(){
+	    $('.bgParallax').each(function(){
+		    var $obj = $(this);
+		    $(window).scroll(function() {
+			    var yPos = -($(window).scrollTop() / $obj.data('speed'));
+			    var bgpos = '50%'+ yPos + 'px';
+			    $obj.css('background-position', bgpos );
+		    });
+	    });
+
+	    $('#open-drop').click(function(event) {
+	    	event.stopPropagation();
+	    	$('.dropdown-menu').toggleClass('dropdown-menu_open');
+	    });
+
+	    $(document).click(function(event) { 
+		    	if($('.dropdown-menu').is(":visible")) {
+		    		$('.dropdown-menu').removeClass('dropdown-menu_open');
+		    	}
+	    }); 
+
+	});
+	</script>
+	<!-- PhotoPlay CSS's -->
+	<style type="text/css">
+	header, #bs-example-navbar-collapse-1, .navbar-header, .navbar{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* FF3.6+ */;
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(33, 63, 154, 1); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* W3C */	
+	}
+	.h_100{
+		/*height: 100px;*/
+		padding: 22px 0
+	}
+	.nav_logo{
+		width: 167px;
+	}
+	#bs-example-navbar-collapse-1 a{
+		color: white;
+	}
+	#bs-example-navbar-collapse-1 .open>a{
+		background: none;
+	}
+	body{
+		min-width: 260px;
+	}
+	footer{
+		background-color: #20409a;
+	}
+	h1{
+		font-size: 38px;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 900;
+		margin: 0;
+		line-height: 1.25;
+	}
+	h2{ 
+		font-size: 14px;
+		font-family: 'Lato', sans-serif;
+		font-weight: 900;
+		color: white;
+		margin: 0;
+	}
+	h3{
+		font-size: 38px;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 900;
+		margin: 0;
+	}
+	h4{
+		font-size: 20px;
+		font-family: 'Lato', sans-serif;
+		font-weight: 900;
+		color: white;
+		margin: 0
+	}
+	h5{
+		font-size: 12px;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;
+		margin: 0;
+		color: white;
+	}
+	.ppadrao {
+		font-size: 13px;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		line-height: 24px;
+		color: #3a3a3a;
+		margin: 15px 0;
+	}
+	a{
+		text-decoration: none;
+	}
+	a:hover	{
+		text-decoration: none;
+	}
+	footer p {
+		color: white;
+		font-family: "Lato",sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		margin: 0;
+	}
+	.footer2{
+		background-color: white;
+	}
+
+	.align_footer{
+		margin: 50px 0;
+		min-height: 100px;
+	}
+	#bs-example-navbar-collapse-1 input[type="button"]{
+		background: none repeat scroll 0 0 rgba(198, 198, 198, 0.35);
+		border: 2px solid white;
+		border-radius: 10px;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 11px;
+		font-weight: 900;
+		height: 40px;
+		width: 210px;
+	}
+	#bs-example-navbar-collapse-1 input[type="button"]:hover{
+		background: none repeat scroll 0 0 rgba(198, 198, 198, 0.5);
+	}
+	#bs-example-navbar-collapse-1 input[type="button"]:active{
+		background: none repeat scroll 0 0 rgba(33, 63, 154, 0);
+		display: block;
+	}
+	.hide-xs{
+		display: none;
+	}
+	.dropdown-menu{
+		background-color: #213f9a;
+	}
+
+	/* Small devices (tablets, 768px and up) */
+	@media (min-width: 768px) { 
+		body{
+			max-width: 1400px;
+			margin: 0 auto;
+		}
+		.nav_logo{
+			width: 240px;
+		}
+		.navbar-brand{
+			padding: 8px 15px;
+		}
+		.div_limiter{
+			width: 91%;
+			margin: 0 auto;
+		}
+		#bs-example-navbar-collapse-1 input[type="button"]{
+			width: 158px;
+		}
+		.ppadrao{
+			font-size: 15px;
+		}
+		.hide-xs{
+			display: block;
+		}
+	}
+
+
+	@media (min-width: 992px) { 
+		.div_limiter{
+			width: 81%;
+			margin: 0 auto;
+		}
+		#bs-example-navbar-collapse-1 input[type="button"]{
+			width: 210px;
+		}
+	}
+
+	@media (min-width: 1200px) { 
+		.div_limiter{
+			width: 76%;
+			margin: 0 auto;
+		}
+	}
+
+	@media (min-width: 1400px) { 
+		.div_limiter{
+			width: 71%;
+			margin: 0 auto;
+		}
+	}
+
+	#fb-root {
+		display: none;
+	}
+	.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+		width: 100% !important;
+		min-width: 240px;
+	}
+	
+	</style>
+	{% block head %} {% endblock %}
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.0";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	{% block body %} {% endblock %}
+	<header>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid div_limiter">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header h_100">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{% url 'Portal' %}">
+					<img class="nav_logo"src="{{STATIC_URL}}img/logo.png">
+				</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav h_100">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Produtos <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="{% url 'PhotoLembranca' %}">PhotoLembrança</a></li>
+							<li><a href="{% url 'PhotoGram' %}">PhotoGram</a></li>
+							<li><a href="{% url 'PhotoLivro' %}">PhotoLivro</a></li>
+							<li><a href="{% url 'PhotoProjecao' %}">PhotoProjeção</a></li>
+							<li><a href="{% url 'PhotoEmpresa' %}">PhotoEmpresa</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="{% url 'Blog' %}">Blog</a>
+					</li>
+					<li>
+						<a href="{% url 'Contato' %}">Contato</a>
+					</li>
+				</ul>
+				<ul class="hide-xs nav navbar-right">
+					<li><a style="padding: 27px 0 0;" href="{% url 'Contato' %}"><input  type="button" value="SOLICITAR ORÇAMENTO"></a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+   </header>
+
+   <div id="corpo" class='container-fluid'>
+		{% block content %} {% endblock %}
+	</div>
+
+   <footer>
+   		<div class="div_limiter container-fluid">
+	   		<div class="row">
+	   			<div class="col-sm-16">
+	   				<div class="row">
+	   					<div class="col-sm-12 align_footer">
+		   					<h4>CONTATO</h4>
+							<p style="margin-top:20px;">(14) 9 9853-8758</p>
+							<p style="margin-top:15px;">equipe@photoplay.com.br</p>
+						</div>
+						<div class="col-sm-12 align_footer">
+		   					<h4>EMPRESA</h4>
+							<p style="margin-top:20px;">Rua Monsenhor Victor Ribeiro Mazzei, 37</p>
+							<p>Jardim Aeroporto</p>
+							<p>Marília - SP</p>
+						</div>
+						<div class="col-sm-12 align_footer">
+		   					<h4>PARCEIRO COMERCIAL</h4>
+							<p style="margin-top:20px; width:230px">Quer oferecer os serviços PhotoPlay para seu clientes?</p>
+						</div>
+						<div class="col-sm-12 align_footer">
+		   					<h4>SIGA-NOS</h4>
+	   					</div>
+	   				</div>
+	   			</div>
+	   			<div class="col-sm-8 align_footer">
+	   				<h4>CONECTE-SE</h4>
+					<div style="background-color: white; margin-top:20px;" class="fb-like-box" data-href="https://www.facebook.com/photoplaybr" data-width="260" data-height="260" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"></div>
+	   			</div>
+	   		</div>
+   		</div>
+   		<div class="footer2">
+   			<div class="div_limiter container-fluid">
+				<div class="row apex_footer" style="height: 70px;">
+		   			<div class="col-sm-20">
+						<h5 style="padding: 29px 0;color: #1b368a">PHOTOPLAY - 2015 - © TODOS OS DIREITOS RESERVADOS</h5>
+					</div>
+
+					<div class="col-sm-4 text-right">
+						<img style="padding: 20px 0;" src="{{STATIC_URL}}img/apexdesign.png">
+					</div>	
+		   		</div>
+	   		</div>
+	   	</div>	
+   </footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,595 @@
+{% extends 'bootstrap.html' %}
+
+
+{% block title %}
+PhotoPlay
+{% endblock %}
+
+
+{% block head %}
+<meta content="O Totem PhotoPlay registra os momentos de seu evento através de fotos. Elas são impressas na hora e entregues para seus convidados." name="description">
+<style type="text/css">
+	.c_personalizado{
+		
+	}
+	.text_personalizado .hum{
+		font-size: 31px; 
+		font-weight: 700;
+	}
+	.text_personalizado .hdois{
+		font-size: 19px; 
+		font-weight: 300;
+	}
+	.img_personalizado img{
+		width: 70%;
+		max-width: 322px;
+		padding-bottom: 40px;
+	}
+	.banner_produtos{
+    	background-image: url("{{STATIC_URL}}img/banner2.png");
+    	height: 200px;
+	}
+	.header_produtos{
+    	background-color: #b1b1b1;
+    	height: 100px;
+	}
+	.header_produtos .hum{
+		color: #fff; 
+		font-size: 16px;
+	}
+	.cTitulo{
+		margin-top: 128px;
+	}
+	.cTitulo .hum{
+		font-size: 24px;
+	}
+	.cTitulo .p_icon{
+		height: 27px;
+	}
+	.cTexto {
+		/*height: 250px;*/
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+		z-index: 11;
+		position: relative;
+	}
+	.b-Green{
+		background-color: #50b848;
+	}
+	.b-Red{
+		background-color: #ed1c24;
+	}
+	.b-Blue{
+		background-color: #0557a0;
+	}
+	.b-Purple{
+		background-color: #8a50a0;
+	}
+	.b-Yellow{
+		background-color: #d4a92a;
+	}
+	.cProdutosFoot {
+		z-index: 10;
+	}
+	.b-foot-Green{
+		background-color: rgba(80, 184, 72, 0.7);
+	}
+	.b-foot-Red{
+		background-color: rgba(237, 28, 36, 0.7);
+	}
+	.b-foot-Blue{
+		background-color: rgba(5, 87, 160, 0.7);
+	}
+	.b-foot-Purple{
+		background-color: rgba(138, 80, 160, 0.7);
+	}
+	.b-foot-Yellow{
+		background-color: rgba(212, 169, 42, 0.7);
+	}
+	.cProdutosFoot h3{
+		font-family: "Montserrat",sans-serif;
+		font-size: 11px;
+		color: #fff;
+		font-weight: 900;
+		line-height: 32px;
+	}
+	.cProdutosFoot img{
+		float: left;
+	}
+	.p_top_50{
+		padding-top: 50px;
+	}
+	.p_ver_120{
+		padding: 120px 0;
+	}
+	.m_bottom_60{
+		margin-bottom: 60px;
+	}
+	.xs-vertical-align {
+	    display: flex;
+	    align-items: center;
+	}
+	.saiba_mais{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(183, 183, 183);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(183, 183, 183); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(183, 183, 183); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(183, 183, 183); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(183, 183, 183); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(183, 183, 183); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(183, 183, 183); /* W3C */
+		box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		border-radius: 10px;
+		border: none;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 12px;
+		font-weight: 900;
+		height: 40px;
+		width: 190px;
+		margin-top: 20px
+	}
+	.saiba_mais:active{
+		box-shadow: none;
+		background: rgb(192, 192, 192); /* FF3.6+ */
+	}
+	.get_budget{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(64, 170, 58);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(64, 170, 58); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(64, 170, 58); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(64, 170, 58); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(64, 170, 58); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(64, 170, 58); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(64, 170, 58); /* W3C */
+		box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		border-radius: 10px;
+		border: none;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 12px;
+		font-weight: 900;
+		height: 40px;
+		width: 210px;
+		position: relative;
+	}
+	.get_budget:active{
+		box-shadow: none;
+		background: rgb(64, 170, 58); /* FF3.6+ */
+	}
+	.buttonBigget{
+		border: 2px solid white;
+		font-size: 16px;
+		height: 60px;
+		width: 310px;
+	}
+	.bRed {
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(237, 28, 36);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(237, 28, 36); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(237, 28, 36); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(237, 28, 36); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(237, 28, 36); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(237, 28, 36); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(237, 28, 36); /* W3C */
+	}
+	.bRed:active{
+		box-shadow: none;
+		background: rgb(237, 28, 36); /* FF3.6+ */
+	}
+	.bBlue {
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(5, 87, 160);
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+		rgb(5, 87, 160); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(5, 87, 160); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+		rgb(5, 87, 160); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(5, 87, 160); /* W3C */
+	}
+	.bBlue:active{
+		box-shadow: none;
+		background: rgb(5, 87, 160); /* FF3.6+ */
+	}
+	.bPurple {
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(138, 80, 160);
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+	rgb(138, 80, 160); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(138, 80, 160); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(138, 80, 160); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(138, 80, 160); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+	rgb(138, 80, 160); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(138, 80, 160); /* W3C */
+	}
+	.bPurple:active{
+		box-shadow: none;
+		background: rgb(138, 80, 160); /* FF3.6+ */
+	}
+	.bYellow {
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%), rgb(212, 169, 42);
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), 
+	rgb(212, 169, 42); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgb(212, 169, 42); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(212, 169, 42); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(212, 169, 42); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%),
+	rgb(212, 169, 42); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgb(212, 169, 42); /* W3C */
+	}
+	.bYellow:active{
+		box-shadow: none;
+		background: rgb(212, 169, 42); /* FF3.6+ */
+	}
+	.cProduto_img{
+		top: -64px;
+	}
+	.center-block-xs{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.text-center-xs {
+		text-align: center;
+	}
+	.cFoot2 h1{
+		font-size: 25px;
+	}
+	.cFoot2 p{
+		color: #000;
+		font-family: "Lato",sans-serif;
+		font-size: 16px;
+		font-weight: 500;
+		margin: 30px 0;
+	}
+
+	@media (min-width: 768px) { 
+		.vertical-align {
+		    display: flex;
+		    align-items: center;
+		}
+		.c_personalizado{
+			height:  550px;
+		}
+		.img_personalizado img{
+			width:100%;
+		}
+		.text_personalizado .hum{
+			font-size: 46px; 
+		}
+		.text_personalizado .hdois{
+			font-size: 27px; 
+		}
+		.header_produtos .hum{
+			font-size: 32px;
+		}
+		.cTitulo .hum{
+			font-size: 38px;
+		}
+		.cTitulo .p_icon{
+			height: auto;
+		}
+		.cProduto_img{
+			top: 0;
+			height: 0;
+			z-index: 15;
+		}
+		.center-block-xs{
+			margin-left: 0;
+		}
+		.text-center-xs {
+			text-align: left;
+		}
+		.cFoot2 h1{
+			font-size: 42px;
+		}
+	}
+	@media (min-width: 992px) { 
+		.text_personalizado .hum{
+			font-size: 50px; 
+		}
+		.text_personalizado .hdois{
+			font-size: 30px; 
+		}
+		.cProdutosFoot h3{
+			font-size: 16px;
+		}
+		.cProdutosFoot h3{
+			font-size: 13px;
+		}
+	}
+	@media (min-width: 1200px) { 
+		.cProdutosFoot h3{
+			font-size: 16px;
+		}
+	}
+	@media (min-width: 1400px) { 
+		/*.text_personalizado{
+			top: 160px;
+		}
+		.img_personalizado{
+			top: 140px;
+		}*/
+	}
+
+
+
+</style>
+{% endblock %}
+
+{% block content %} 
+<div class="row c_personalizado vertical-align div_limiter">
+
+	<div class="col-sm-8 col-sm-push-16 img_personalizado text-center">
+		<img src="{{STATIC_URL}}img/totem.png" >
+	</div>
+
+	<div class="col-sm-16 col-sm-pull-8 text_personalizado">
+		<h1 class="hum">PERSONALIZADO</h1>
+		<h1 class="hdois">DE ACORDO COM SEU EVENTO</h1>
+
+		<p class="ppadrao">O Totem PhotoPlay é um equipamento que registra os momentos de seu evento através de fotos. As pessoas se posicionam na frente dele e são clicadas em poses super descontraídas. Para casamentos, aniversários e formaturas, tenha o Totem personalizado e revestido com sua própria arte. Pode ser uma foto, uma caricatura, você escolhe. Em eventos corporativos, estampe sua marca e divulgue patrocinadores.
+		</p>
+	</div>
+	
+</div>
+
+<div class="row banner_produtos">
+</div>
+
+
+<div class="row header_produtos xs-vertical-align">
+	<div class="col-sm-24 div_limiter">
+		<h1 class="text-left hum">CONHEÇA NOSSOS PRODUTOS</h1>
+	</div>
+</div>
+
+<div class="cProdutos">
+	<div class="row cTitulo div_limiter">
+		<div class="col-sm-8 col-sm-push-16 text-center cProduto_img">
+			<img src="{{STATIC_URL}}img/img1.png">
+		</div>
+		<div class="col-xs-3 col-sm-2 col-sm-pull-8">
+			<img class="p_icon" src="{{STATIC_URL}}img/icon1.png">
+		</div>
+		<div class="col-xs-21 col-sm-14 col-sm-pull-8">
+			<h1 style="color: #50b848;" class="hum">PHOTOLEMBRANÇA</h1>
+		</div>
+	</div>
+
+	<div class="row cTexto b-Green">
+		<div class="div_limiter">
+			<div class="col-sm-16">
+				<p class="ppadrao p_top_50" style="color: white;"><b>Todas as fotos tiradas no Totem PhotoPlay já saem com uma moldura exclusiva de seu evento.</b> Elas podem ser impressas na hora e entregues para seus convidados levarem para casa.  
+				As fotos podem ser publicadas em tempo real ou enviadas para seus convidados por e-mail.</p>
+
+				<a  class="" href="{% url 'PhotoLembranca' %}"><input class="center-block-xs m_bottom_60 saiba_mais" type="button" value="SAIBA MAIS"></a>
+
+			</div>
+		</div>	
+	</div>
+	<div class="row cProdutosFoot b-foot-Green">
+		<div style="min-height: 70px;" class="div_limiter vertical-align">
+			<div class="col-sm-4 col-xs-6">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon1.png">
+				<h3>+DIVERSÃO</h3>
+			</div>
+			<div class="col-sm-6 col-xs-8 text-center-xs">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon2.png">
+				<h3>+INTERATIVIDADE</h3>
+			</div>
+			<div class="col-sm-8 col-xs-10 text-center-xs">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon3.png">
+				<h3>+PERSONALIZAÇÃO</h3>
+			</div>
+			<div class="col-sm-6 col-xs-24">
+				<a href="{% url 'Contato' %}"><input class="center-block-xs get_budget" type="button" value="SOLICITAR ORÇAMENTO"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="cProdutos">
+	<div class="row cTitulo div_limiter">
+		<div class="col-sm-8 col-sm-push-16 text-center cProduto_img">
+			<img src="{{STATIC_URL}}img/img2.png">
+		</div>
+		<div class="col-xs-4 col-sm-2 col-sm-pull-8">
+			<img class="p_icon" src="{{STATIC_URL}}img/icon2.png">
+		</div>
+		<div class="col-xs-20 col-sm-14 col-sm-pull-8">
+			<h1 style="color: #ed1c24;" class="hum">PHOTOGRAM</h1>
+		</div>
+	</div>
+
+	<div class="row cTexto b-Red">
+		<div class="div_limiter">
+			<div class="col-sm-16">
+				<p class="ppadrao p_top_50" style="color: white;"><b>Transforme seu smartphone em uma Polaroid. Imprima fotos direto do seu celular.</b>
+				</p>	
+				<p class="ppadrao" style="color: white; margin: 0;">Seus convidados adoram tirar fotos e publicar no Instagram?</p>
+				<p class="ppadrao" style="color: white; margin: 0;">O que você acha de poder imprimir essas fotos para que eles levem como lembrança?</p>
+				<p class="ppadrao" style="color: white; margin: 0;">Com Photogram, isso é possível. Toda foto publicada no Instagram com a #hashtag de seu evento é capturada e processada por nosso sistema e são então impressas na hora.
+			    </p>
+
+				<a  class="" href="{% url 'PhotoGram' %}"><input class="center-block-xs m_bottom_60 saiba_mais" type="button" value="SAIBA MAIS"></a>
+
+			</div>
+		</div>	
+	</div>
+	<div class="row cProdutosFoot b-foot-Red">
+		<div style="min-height: 70px;" class="div_limiter vertical-align">
+			<div class="col-sm-4 col-xs-6">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon1.png">
+				<h3>+DIVERSÃO</h3>
+			</div>
+			<div class="col-sm-6 col-xs-8 text-center-xs">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon2.png">
+				<h3>+INTERATIVIDADE</h3>
+			</div>
+			<div class="col-sm-8 col-xs-10 text-center-xs">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon4.png">
+				<h3>+RESULTADOS</h3>
+			</div>
+			<div class="col-sm-6 col-xs-24">
+				<a href="{% url 'Contato' %}"><input class="center-block-xs get_budget bRed" type="button" value="SOLICITAR ORÇAMENTO"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="cProdutos">
+	<div class="row cTitulo div_limiter">
+		<div class="col-sm-13 col-sm-push-11 text-center cProduto_img">
+			<img style="max-width:100%;" src="{{STATIC_URL}}img/img3.png">
+		</div>
+		<div class="col-xs-4 col-sm-2 col-sm-pull-13">
+			<img class="p_icon" src="{{STATIC_URL}}img/icon3.png">
+		</div>
+		<div class="col-xs-20 col-sm-9 col-sm-pull-13">
+			<h1 style="color: #0557a0;" class="hum">PHOTOLIVRO</h1>
+		</div>
+	</div>
+
+	<div class="row cTexto b-Blue">
+		<div class="div_limiter">
+			<div class="col-sm-11">
+				<p class="ppadrao p_top_50" style="color: white;"><b>Todas as fotos de seu evento reunidas em um único lugar.</b>
+				</p>	
+				<p class="ppadrao" style="color: white; margin: 0;">O Photolivro é produzido após o evento e reúne as fotos tiradas no Totem PhotoPlay com uma diagramação moderna, para você recordar os momentos inesquecíveis sempre que quiser.
+			    </p>
+
+				<a  class="" href="{% url 'PhotoLivro' %}"><input class="center-block-xs m_bottom_60 saiba_mais" type="button" value="SAIBA MAIS"></a>
+
+			</div>
+		</div>	
+	</div>
+	<div class="row cProdutosFoot b-foot-Blue">
+		<div style="min-height: 70px;" class="div_limiter vertical-align">
+			<div class="col-sm-4 col-xs-6">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon1.png">
+				<h3>+DIVERSÃO</h3>
+			</div>
+			<div class="col-sm-6 col-xs-8 text-center-xs">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon2.png">
+				<h3>+INTERATIVIDADE</h3>
+			</div>
+			<div class="col-sm-8 col-xs-10 text-center-xs">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon4.png">
+				<h3>+RESULTADOS</h3>
+			</div>
+			<div class="col-sm-6 col-xs-24">
+				<a href="{% url 'Contato' %}"><input class="center-block-xs get_budget bBlue" type="button" value="SOLICITAR ORÇAMENTO"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="cProdutos">
+	<div class="row cTitulo div_limiter">
+		<div class="col-sm-9 col-sm-push-15 text-center cProduto_img">
+			<img style="max-width:100%;" src="{{STATIC_URL}}img/img4.png">
+		</div>
+		<div class="col-xs-4 col-sm-2 col-sm-pull-9">
+			<img class="p_icon" src="{{STATIC_URL}}img/icon4.png">
+		</div>
+		<div class="col-xs-20 col-sm-13 col-sm-pull-9">
+			<h1 style="color: #8a50a0;" class="hum">PHOTOPROJEÇÃO</h1>
+		</div>
+	</div>
+
+	<div class="row cTexto b-Purple">
+		<div class="div_limiter">
+			<div class="col-sm-15">
+				<p class="ppadrao p_top_50" style="color: white;"><b>Tirou uma foto no totem? Agora é só esperar para se ver no telão. Mais interatividade e diversão para sua festa.</b>
+				</p>	
+				<p class="ppadrao" style="color: white; margin: 0;">Todas as fotos tiradas no Totem PhotoPlay podem ser automaticamente projetadas nos telões e televisores de seu evento. 
+			    </p>
+
+				<a  class="" href="{% url 'PhotoProjecao' %}"><input class="center-block-xs m_bottom_60 saiba_mais" type="button" value="SAIBA MAIS"></a>
+
+			</div>
+		</div>	
+	</div>
+	<div class="row cProdutosFoot b-foot-Purple">
+		<div style="min-height: 70px;" class="div_limiter vertical-align">
+			<div class="col-sm-4 col-xs-6">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon1.png">
+				<h3>+DIVERSÃO</h3>
+			</div>
+			<div class="col-sm-6 col-xs-8 text-center-xs">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon2.png">
+				<h3>+INTERATIVIDADE</h3>
+			</div>
+			<div class="col-sm-8 col-xs-10 text-center-xs">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon4.png">
+				<h3>+RESULTADOS</h3>
+			</div>
+			<div class="col-sm-6 col-xs-24">
+				<a href="{% url 'Contato' %}"><input class="center-block-xs get_budget bPurple" type="button" value="SOLICITAR ORÇAMENTO"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="cProdutos">
+	<div class="row cTitulo div_limiter">
+		<div class="col-sm-9 col-sm-push-15 text-center cProduto_img">
+			<img style="max-width:100%;" src="{{STATIC_URL}}img/img5.png">
+		</div>
+		<div class="col-xs-4 col-sm-2 col-sm-pull-9">
+			<img class="p_icon" src="{{STATIC_URL}}img/icon5.png">
+		</div>
+		<div class="col-xs-20 col-sm-13 col-sm-pull-9">
+			<h1 style="color: #d4a92a;" class="hum">PHOTOEMPRESAS</h1>
+		</div>
+	</div>
+
+	<div class="row cTexto b-Yellow">
+		<div class="div_limiter">
+			<div class="col-sm-15">
+				<p class="ppadrao p_top_50" style="color: white;"><b>Solução completa para a ativação de sua marca em eventos.</b> Fotos com a sua marca espalhadas pelo Facebook que geram tráfego para sua página e aumentam o engajamento dos usuários.  Crescimento da sua base de fãs e coleta de e-mails para uso em campanhas de marketing.</p>
+
+				<a  class="" href="{% url 'PhotoEmpresa' %}"><input class="center-block-xs m_bottom_60 saiba_mais" type="button" value="SAIBA MAIS"></a>
+
+			</div>
+		</div>	
+	</div>
+	<div class="row cProdutosFoot b-foot-Yellow">
+		<div style="min-height: 70px;" class="div_limiter vertical-align">
+			<div class="col-sm-4 col-xs-6">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon1.png">
+				<h3>+DIVERSÃO</h3>
+			</div>
+			<div class="col-sm-6 col-xs-8 text-center-xs">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon2.png">
+				<h3>+INTERATIVIDADE</h3>
+			</div>
+			<div class="col-sm-8 col-xs-10 text-center-xs">
+				<img class="hide-xs" src="{{STATIC_URL}}img/classicon3.png">
+				<h3>+PERSONALIZAÇÃO</h3>
+			</div>
+			<div class="col-sm-6 col-xs-24">
+				<a href="{% url 'Contato' %}"><input class="center-block-xs get_budget bYellow" type="button" value="SOLICITAR ORÇAMENTO"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row div_limiter cFoot2">
+	<div class="col-xs-24 text-center p_ver_120">
+		<h1 class="center-block" style="max-width: 710px;color: #20409a;">TENHO INTERESSE EM TER O PHOTOPLAY EM MEU EVENTO!</h1>
+		<p>Uma atração surpreendente. Inove oferencendo interatividade e uma nova experiência.</p>
+		<a href="{% url 'Contato' %}"><input type="button" style="" class="get_budget buttonBigget bBlue" value="SOLICITAR ORÇAMENTO"></a>
+	</div>
+</div> 
+{% endblock %}
