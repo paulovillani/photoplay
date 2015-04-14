@@ -84,61 +84,46 @@ Contato
 		font-size: 32px;
 		margin: 0;
 	}
-	.cContato{
-		width: 1000px;
-		position: relative;
-		left: 50%;
-		margin-left: -500px;
-		overflow: auto;
-		overflow: hidden;
-		background-color: white;
-	}
-	.cContatoText{
-		float: right;
-		width: 470px;
-		margin-top: 60px;
-	}
 	.cContato_img{
 		width:  370px;
 
 	}
-	.cContatoForm{
-		width: 480px;
-		float: left;
-		margin-top: 60px;
-	}
-	.cContatoForm>label[for=id_service_type_0]{
+	form>label[for=id_service_type_0]{
 		font-family: "Montserrat",sans-serif;
 		font-size: 20px;
 		color: #213f9a;
 		font-weight: 900;
 		}
-	.cContatoForm>label[for=id_name]{
+	form>label[for=id_name]{
 		font-family: "Montserrat",sans-serif;
 		font-size: 20px;
 		color: #213f9a;
 		font-weight: 900;	
 	}
-	.cContatoForm>label[for=id_municipios]{
+	form>label[for=id_municipios]{
 		font-family: "Montserrat",sans-serif;
 		font-size: 20px;
 		color: #213f9a;
 		font-weight: 900;	
 	}
-	.cContatoForm ul{
+	form ul{
 		padding: 0;
+		margin: 16px 0;
 	}
-	.cContatoForm li{
+	form li>label{
+		font-weight:normal;
+	}
+	form li{
 		font-family: "Lato",sans-serif;
 		font-size: 14px;
 		color: #3a3a3a;
 		font-weight: 300;
 		list-style: outside none none;
 	}
-	.cContatoForm textarea{
+	form textarea{
 		padding: 10px 0 0 20px;
 	}
-	.cContatoForm input{
+	form input{
 		padding: 0px 0 0 20px;
 	}
 	#id_name{
@@ -149,7 +134,7 @@ Contato
     	font-size: 14px;
     	font-weight: 300;
     	height: 50px;
-    	width: 420px;
+    	width: 97%;
     	margin-top: 20px;
 	}
 	#id_email{
@@ -160,7 +145,7 @@ Contato
     	font-size: 14px;
     	font-weight: 300;
     	height: 50px;
-    	width: 420px;
+    	width: 97%;
     	margin-top: 20px;
 	}
 	#id_date_start{
@@ -171,7 +156,7 @@ Contato
     	font-size: 14px;
     	font-weight: 300;
     	height: 50px;
-    	width: 420px;
+    	width: 97%;
     	margin-top: 20px;
 	}
 	#id_message{
@@ -182,8 +167,8 @@ Contato
     	font-size: 14px;
     	font-weight: 300;
     	height: 100px;
-    	width: 420px;
-    	margin-top: 20px;
+    	width: 97%;
+    	margin: 20px 0 30px 0;
 	}
 	#municipios_uf{
 		border: 1px solid #b5b5b5;
@@ -193,7 +178,7 @@ Contato
     	font-size: 14px;
     	font-weight: 300;
     	height: 50px;
-    	width: 80px;
+    	width: 19%;
     	margin: 20px 10px 20px 0;
     	float: left;
 	}
@@ -205,10 +190,10 @@ Contato
     	font-size: 14px;
     	font-weight: 300;
     	height: 50px;
-    	width: 330px !important;
+    	width: 76% !important;
     	margin: 20px 0;
 	}
-	.cContatoForm input[type="submit"]{
+	form input[type="submit"]{
 		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
 		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(80, 184, 72, 0.70); /* Chrome,Safari4+ */
@@ -224,14 +209,13 @@ Contato
 		font-weight: 900;
 		height: 60px;
 		width: 280px;
-		margin-top: 30px;
 		box-shadow: 0 -5px 0 rgba(0,0,0,0.2) inset;
 		-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
 		-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
 	}
-	.cContatoForm input[type="submit"]:hover{
+	form input[type="submit"]:hover{
 	}
-	.cContatoForm input[type="submit"]:active{
+	form input[type="submit"]:active{
 		box-shadow: none;
 		background: rgba(80, 184, 72, 0.70); /* FF3.6+ */
 	}
@@ -241,25 +225,41 @@ Contato
 	.errorlist li{
 		color: red;
 	}
+	.margin_60{
+		margin: 60px 0;
+	}
+	.button_center-xs{
+		padding: 0;
+		margin: 0 auto;
+		display: block;
+	}
+	/* Small devices (tablets, 768px and up) */
+	@media (min-width: 768px) { 
+		form li>label{
+			margin: 0;
+		}
+		.button_center-xs{
+			margin: 0;
+		}
+	}
 
 </style>
 {% endblock %}
 
 
 {% block content %}
-<div class="cContato row div_limiter"> 
-	<div class="col-sm-12">
-		<form class="cContatoForm" action="/enviar_contato/" method="post">
+<div class="row div_limiter"> 
+	<div class="margin_60 col-sm-12">
+		<form class="" action="/enviar_contato/" method="post">
 			{% csrf_token %}
 			{{ contact_form.media }}
 			{{contact_form}}
-			<input style="padding: 0;" type="submit" value="Enviar Contato" />
+			<input class="button_center-xs" type="submit" value="Enviar Contato"/>
 		</form>
 	</div>
-	<div class="cContatoText col-sm-12">
+	<div class="margin_60 col-sm-12">
 		<h3 style="font-size: 28px; font-weight: 700; color: #213f9a;">DEIXE SEU EVENTO</h1>
 		<h3 style="font-size: 38px; font-weight: 700; color: #213f9a;">MAIS DIVERTIDO!</h1>
-
 
 		<h1 style="font-size: 18px; font-weight: 700; margin-top: 60px; color: #213f9a;">FOTOS ILIMITADAS</h1>
 		<p class="ppadrao">Seus convidados tiram fotos à vontade e levam 
@@ -271,7 +271,7 @@ Contato
 		no  totem e das fotos publicadas no Instagram com a hashtag do seu evento.
 		</p>
 
-		<img src="{{STATIC_URL}}img/img7.png">
+		<img class="center-block" style="width:100%; max-width:462px;" src="{{STATIC_URL}}img/img7.png">
 	</div>
 </div>
 

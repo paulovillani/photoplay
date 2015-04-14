@@ -188,6 +188,9 @@
 	.dropdown-menu{
 		background-color: #213f9a;
 	}
+	.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+		background-color: rgba(28, 52, 125, 0.7);
+	}
 	.xs-vertical-align {
 	    display: flex;
 	    align-items: center;
@@ -313,7 +316,7 @@
 					</li>
 				</ul>
 				<ul class="hide-xs nav navbar-right">
-					<li><a style="padding: 27px 0 0;" href="{% url 'Contato' %}"><input  type="button" value="SOLICITAR ORÇAMENTO"></a></li>
+					<li><a style="padding: 27px 0 0; background-color:transparent;" href="{% url 'Contato' %}"><input  type="button" value="SOLICITAR ORÇAMENTO"></a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->

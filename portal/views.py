@@ -24,10 +24,10 @@ class PortalPhotoGramView(TemplateView):
 	template_name = "photogram.html"
 
 class PortalPhotoProjecaoView(TemplateView):
-	template_name = "produtos_photoprojecao.html"
+	template_name = "photoprojecao.html"
 
 class PortalPhotoEmpresaView(TemplateView):
-	template_name = "produtos_photoempresa.html"
+	template_name = "photoempresa.html"
 
 class PortalContatoView(TemplateView):
 	template_name = "contato2.html"
