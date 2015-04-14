@@ -30,7 +30,7 @@ class PortalPhotoEmpresaView(TemplateView):
 	template_name = "photoempresa.html"
 
 class PortalContatoView(TemplateView):
-	template_name = "contato2.html"
+	template_name = "contato.html"
 
 	def get_context_data(self, **kwargs):
 		context = super(PortalContatoView, self).get_context_data(**kwargs)
