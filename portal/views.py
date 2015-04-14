@@ -18,7 +18,7 @@ class PortalPhotoLivroView(TemplateView):
 	template_name = "produtos_photolivro.html"
 
 class PortalPhotoLembrancaView(TemplateView):
-	template_name = "produtos_photolembranca.html"
+	template_name = "photolembranca.html"
 
 class PortalPhotoGramView(TemplateView):
 	template_name = "produtos_photogram.html"
@@ -30,7 +30,7 @@ class PortalPhotoEmpresaView(TemplateView):
 	template_name = "produtos_photoempresa.html"
 
 class PortalContatoView(TemplateView):
-	template_name = "contato.html"
+	template_name = "contato2.html"
 
 	def get_context_data(self, **kwargs):
 		context = super(PortalContatoView, self).get_context_data(**kwargs)

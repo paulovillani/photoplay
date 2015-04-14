@@ -1,0 +1,212 @@
+{% extends 'bootstrap.html' %}
+
+{% block title %}
+PhotoLembrança
+{% endblock %}
+
+{% block head %}
+<meta content="A foto lembrança tiradas no Totem PhotoPlay é impressa na hora, com uma moldura exclusiva de seu evento." name="description">
+<style type="text/css">
+	#parallax1{
+		height: 200px;
+		background-image: url("{{STATIC_URL}}/img/photolembranca1.jpg");
+	}
+	#parallax2{
+		height: 510px;
+		background-image: url("{{STATIC_URL}}/img/photolembranca2.jpg");
+	}
+	.cHeader{
+		background-color: rgb(80,184,72);
+		height: 100px; 
+	}
+	.cHeader h1{
+		color: white;
+		font-size: 21px;
+		margin: 7px 0;
+	}
+	.margin_img{
+		margin: 70px 0; 
+	}
+	.container1 .hum, .container2 .hum{
+		font-size: 27px; 
+		font-weight: 700;
+		color: rgb(80,184,72);
+	}
+	.container1 .hum_2, .container2 .hum_2{
+		font-size: 18px; 
+		font-weight: 300;
+		color: rgb(80,184,72);
+	}
+	.container1 p, .container2 p{
+		margin: 25px 0;
+	}
+	.cFoot1{
+		background-color: rgba(80, 184, 72, 0.7);
+		height: 200px; 
+	}
+	.cFoot1 h3{
+		font-family: "Montserrat",sans-serif;
+		font-size: 10px;
+		color: #fff;
+		font-weight: 900;
+		margin: 10px 0 0
+	}
+	.cFoot1 img{
+		height: 40px;
+	}
+	.cFoot2{
+		height: 500px; 
+	}
+	.cFoot2 h1{
+		font-size: 23px;
+		color: rgb(80, 184, 72);
+	}
+	.cFoot2 p{
+		font-family: "Lato",sans-serif;
+		font-size: 16px;
+		color: #000;
+		font-weight: 500;
+		margin: 16px 0;
+	}
+	.cFoot2 input[type="button"]{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(80, 184, 72, 0.70); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* W3C */
+		border: 2px solid white;
+		border-radius: 10px;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 16px;
+		font-weight: 900;
+		height: 60px;
+		width: 100%;
+		max-width: 340px;
+		margin-top: 60px;
+		box-shadow: 0 -5px 0 rgba(0,0,0,0.2) inset;
+		-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+	}
+	.cFoot2 input[type="button"]:active{
+		box-shadow: none;
+		background: rgba(80, 184, 72, 0.70); /* FF3.6+ */
+	}
+
+	@media (min-width: 768px) { 
+		.cHeader h1{
+			font-size: 32px;
+			margin: 0;
+		}
+		.container1 {
+			height: 530px;
+		}
+		.container2{
+			height: 470px;
+		}
+		.margin_img{
+			margin: 0; 
+		}
+		.container1 .hum, .container2 .hum{
+			font-size: 38px; 
+		}
+		.container1 .hum_2, .container2 .hum_2{
+			font-size: 26px; 
+		}
+		.cFoot1 h3{
+			font-size: 17px;
+			margin: 0 0 0 5px;
+		}
+		.cFoot1 img{
+			height: 50px;
+		}
+		.cFoot2 h1{
+			font-size: 39px;
+		}
+	}
+	@media (min-width: 992px) { 
+		.cFoot1 h3{
+			font-size: 20px;
+			margin: 0 0 0 20px;
+		}
+		.cFoot1 img{
+			height: 60px;
+		}
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="parallax1" class="row bgParallax" data-speed="2"></div>
+
+<div class="row cHeader xs-vertical-align">
+	<div class="div_limiter">
+		<div class="col-xs-4 col-sm-2">
+			<img src="{{STATIC_URL}}/img/icon1_b.png">
+		</div>
+		<div class="col-xs-20 col-sm-22">
+			<h1>PHOTOLEMBRANÇA</h1>
+		</div>
+	</div>
+</div>
+
+<div class="row container1 vertical-align">
+	<div class="div_limiter vertical-align">
+		<div class="col-sm-8 col-sm-push-16 text-center">
+			<img class="margin_img" src="{{STATIC_URL}}img/img1.png" >
+		</div>
+		<div class="col-sm-16 col-sm-pull-8">
+			<h1 class="hum">FOTOS IMPRESSAS</h1>
+			<h1 class="hum_2">INSTANTANEAMENTE EM DIVERSOS FORMATOS</h1>
+
+			<p><b>Investir em um evento mmorável para as pessoas mais importante de sua vida exige dedicação e planejamento, o processo é arduo mas no final a sensação é unica e sempre vale a pena</b></p>
+
+			<p>A PhotoPlay respeita cada miuto de dedicação e oferece aos seus clientes ferramentas para que o momento seja ainda mais feliz. Nossa solução permite que cada minuto seja eternizado e as lembranças, o que de fato vale a pena, serão muito mais vivas e divertidas</p>
+
+			<p class="margin-50-b-xs"><b>Para Casamentos, Formaturas, Festas de Aniversário, Confraternizações e Festas de 15 anos.</b></p>
+		</div>
+	</div>
+</div>
+
+<div id="parallax2" class="bgParallax" data-speed="2"></div>
+<div class="row container2 vertical-align">
+	<div class="div_limiter vertical-align">
+		<div class="col-sm-8 col-sm-push-16 text-center">
+			<img style="width:100%; max-width:334px;" class="margin_img" src="{{STATIC_URL}}img/img6.png" >
+		</div>
+		<div class="col-sm-16 col-sm-pull-8">
+			<h1 class="hum">FOTOS PERSONALIZADAS</h1>
+			<h1 class="hum_2">ESCOLHA A MOLDURA DAS FOTOS</h1>
+
+			<p>As fotos processadas por nosso sistema recebem uma moldura personalizada antes de serem impressas e entregues para seus convidados.</p>
+
+			<p>Além disso, todas as fotos são organizadas e ficam disponíveis em uma galeria online para serem conferidas e baixadas após o evento.</p>
+		</div>		
+	</div>
+</div>
+<div class="row cFoot1 xs-vertical-align">
+	<div class="div_limiter">
+		<div class="col-md-7 col-xs-6 text-center vertical-align">
+			<img src="{{STATIC_URL}}img/classicon1_g.png">
+			<h3>+DIVERSÃO</h3>
+		</div>
+		<div class="col-md-9 col-xs-9 text-center vertical-align">
+			<img src="{{STATIC_URL}}img/classicon2_g.png">
+			<h3>+INTERATIVIDADE</h3>
+		</div>
+		<div class="col-md-8 col-xs-9 text-center vertical-align">
+			<img src="{{STATIC_URL}}img/classicon3_g.png">
+			<h3>+PERSONALIZAÇÃO</h3>
+		</div>
+	</div>
+</div>
+<div class="row div_limiter cFoot2 xs-vertical-align">
+	<div class="col-xs-24 text-center">
+		<h1 class="center-block" style="max-width: 710px;">TENHO INTERESSE EM TER O PHOTOPLAY EM MEU EVENTO!</h1>
+		<p>Uma atração surpreendente. Inove oferencendo interatividade e uma nova experiência.</p>
+		<a href="{% url 'Contato' %}"><input type="button" value="SOLICITAR ORÇAMENTO"></a>
+	</div>
+</div>
+{% endblock %}

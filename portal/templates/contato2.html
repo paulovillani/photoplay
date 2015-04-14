@@ -1,0 +1,279 @@
+{% extends 'bootstrap.html' %}
+
+
+{% block title %}
+Contato
+{% endblock %}
+
+{% block head %}
+<meta content="Entre em contato com a PhotoPlay e peça já um orçamento para o seu evento ficar ainda mais divertido." name="description">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.datepicker.regional['br'] = {
+            closeText: 'Fechar',
+            prevText: 'Anterior',
+            nextText: 'Próximo',
+            currentText: 'Hoje',
+            monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho',
+            'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+            monthNamesShort: ['Jan','Fev.','Mar','Abr','Mai','Jun',
+            'Jul','Ago','Set','Out','Nov','Dez'],
+            dayNames: ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'],
+            dayNamesShort: ['Dom','Seg','Ter.','Qua','Qui','Sex','Sab'],
+            dayNamesMin: ['D','S','T','Q','Q','S','S'],
+            weekHeader: 'Semana',
+            dateFormat: 'dd/mm/yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['br']);
+        $( ".datepicker" ).datepicker( $.datepicker.regional[ "fr" ] );
+
+        $('#municipios_uf option:contains("--")').prop('disabled', true).text("Estado");
+        $('#id_municipios option:contains("--")').prop('disabled', true).text("Cidade");
+
+	});
+</script>
+<style type="text/css">
+	#header{
+		height: 100px;
+		background: none;z
+	}
+	#header_container{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* FF3.6+ */;
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(33, 63, 154, 1); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(33, 63, 154, 1); /* W3C */	
+		position: fixed;
+		z-index: 999;
+	}
+	#parallax1{
+		height: 200px;
+		width: 1400px;
+		position: relative;
+		background-image: url("{{STATIC_URL}}/img/parallax1_produtos.jpg");
+	}
+	.cHeader{
+		background-color: rgb(80,184,72);
+		height: 100px; 
+		width: 1400px;
+	}
+	.cHeaderContent{
+		width: 1000px;
+		left: 50%;
+		margin-left: -500px;
+		position: relative;
+	}
+	.cHeader ul{
+		list-style: outside none none;
+		margin: 0;
+		padding: 0;
+	}
+	.cHeader li{
+		float: left;
+		margin: 30px 11px 0 0;
+	}
+	.cHeader h1{
+		color: white;
+		font-size: 32px;
+		margin: 0;
+	}
+	.cContato{
+		width: 1000px;
+		position: relative;
+		left: 50%;
+		margin-left: -500px;
+		overflow: auto;
+		overflow: hidden;
+		background-color: white;
+	}
+	.cContatoText{
+		float: right;
+		width: 470px;
+		margin-top: 60px;
+	}
+	.cContato_img{
+		width:  370px;
+
+	}
+	.cContatoForm{
+		width: 480px;
+		float: left;
+		margin-top: 60px;
+	}
+	.cContatoForm>label[for=id_service_type_0]{
+		font-family: "Montserrat",sans-serif;
+		font-size: 20px;
+		color: #213f9a;
+		font-weight: 900;
+		}
+	.cContatoForm>label[for=id_name]{
+		font-family: "Montserrat",sans-serif;
+		font-size: 20px;
+		color: #213f9a;
+		font-weight: 900;	
+	}
+	.cContatoForm>label[for=id_municipios]{
+		font-family: "Montserrat",sans-serif;
+		font-size: 20px;
+		color: #213f9a;
+		font-weight: 900;	
+	}
+	.cContatoForm ul{
+		padding: 0;
+	}
+	.cContatoForm li{
+		font-family: "Lato",sans-serif;
+		font-size: 14px;
+		color: #3a3a3a;
+		font-weight: 300;
+		list-style: outside none none;
+	}
+	.cContatoForm textarea{
+		padding: 10px 0 0 20px;
+	}
+	.cContatoForm input{
+		padding: 0px 0 0 20px;
+	}
+	#id_name{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 50px;
+    	width: 420px;
+    	margin-top: 20px;
+	}
+	#id_email{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 50px;
+    	width: 420px;
+    	margin-top: 20px;
+	}
+	#id_date_start{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 50px;
+    	width: 420px;
+    	margin-top: 20px;
+	}
+	#id_message{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 100px;
+    	width: 420px;
+    	margin-top: 20px;
+	}
+	#municipios_uf{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 50px;
+    	width: 80px;
+    	margin: 20px 10px 20px 0;
+    	float: left;
+	}
+	#id_municipios{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 50px;
+    	width: 330px !important;
+    	margin: 20px 0;
+	}
+	.cContatoForm input[type="submit"]{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(80, 184, 72, 0.70); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* W3C */
+		border: 2px solid white;
+		border-radius: 10px;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 16px;
+		font-weight: 900;
+		height: 60px;
+		width: 280px;
+		margin-top: 30px;
+		box-shadow: 0 -5px 0 rgba(0,0,0,0.2) inset;
+		-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+	}
+	.cContatoForm input[type="submit"]:hover{
+	}
+	.cContatoForm input[type="submit"]:active{
+		box-shadow: none;
+		background: rgba(80, 184, 72, 0.70); /* FF3.6+ */
+	}
+	ul.errorlist{
+		margin: 0;
+	}
+	.errorlist li{
+		color: red;
+	}
+
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="cContato row div_limiter"> 
+	<div class="col-sm-12">
+		<form class="cContatoForm" action="/enviar_contato/" method="post">
+			{% csrf_token %}
+			{{ contact_form.media }}
+			{{contact_form}}
+			<input style="padding: 0;" type="submit" value="Enviar Contato" />
+		</form>
+	</div>
+	<div class="cContatoText col-sm-12">
+		<h3 style="font-size: 28px; font-weight: 700; color: #213f9a;">DEIXE SEU EVENTO</h1>
+		<h3 style="font-size: 38px; font-weight: 700; color: #213f9a;">MAIS DIVERTIDO!</h1>
+
+
+		<h1 style="font-size: 18px; font-weight: 700; margin-top: 60px; color: #213f9a;">FOTOS ILIMITADAS</h1>
+		<p class="ppadrao">Seus convidados tiram fotos à vontade e levam 
+		para casa uma lembrança personalizada.
+		</p>
+
+		<h1 style="font-size: 18px; font-weight: 700; margin-top: 60px; color: #213f9a;">IMAGENS NO TELÃO EM TEMPO REAL</h1>
+		<p class="ppadrao">Mais interatividade com projeção das fotos tiradas
+		no  totem e das fotos publicadas no Instagram com a hashtag do seu evento.
+		</p>
+
+		<img src="{{STATIC_URL}}img/img7.png">
+	</div>
+</div>
+
+
+{% endblock %}
