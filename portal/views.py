@@ -15,13 +15,13 @@ class PortalHomeView(TemplateView):
     template_name = "bootstrap_home.html"
 
 class PortalPhotoLivroView(TemplateView):
-	template_name = "produtos_photolivro.html"
+	template_name = "photolivro.html"
 
 class PortalPhotoLembrancaView(TemplateView):
 	template_name = "photolembranca.html"
 
 class PortalPhotoGramView(TemplateView):
-	template_name = "produtos_photogram.html"
+	template_name = "photogram.html"
 
 class PortalPhotoProjecaoView(TemplateView):
 	template_name = "produtos_photoprojecao.html"

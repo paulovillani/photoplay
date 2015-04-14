@@ -1,0 +1,215 @@
+{% extends 'bootstrap.html' %}
+
+{% block title %}
+PhotoGram
+{% endblock %}
+
+{% block head %}
+<meta content="A foto lembrança tiradas no Totem PhotoPlay é impressa na hora, com uma moldura exclusiva de seu evento." name="description">
+<style type="text/css">
+	#parallax1{
+		height: 200px;
+		background-image: url("{{STATIC_URL}}/img/photogram1.jpg");
+	}
+	#parallax2{
+		height: 510px;
+		background-image: url("{{STATIC_URL}}/img/photogram2.jpg");
+	}
+	.cHeader{
+		background-color: rgb(237, 28, 36);
+		height: 100px; 
+	}
+	.cHeader h1{
+		color: white;
+		font-size: 21px;
+		margin: 7px 0;
+	}
+	.margin_img{
+		margin: 70px 0; 
+	}
+	.container1 .hum, .container2 .hum{
+		font-size: 27px; 
+		font-weight: 700;
+		color: rgb(237, 28, 36);
+	}
+	.container1 .hum_2, .container2 .hum_2{
+		font-size: 18px; 
+		font-weight: 300;
+		color: rgb(237, 28, 36);
+	}
+	.container1 p, .container2 p{
+		margin: 25px 0;
+	}
+	.cFoot1{
+		background-color: rgba(237, 28, 36, 0.7);
+		height: 200px; 
+	}
+	.cFoot1 h3{
+		font-family: "Montserrat",sans-serif;
+		font-size: 10px;
+		color: #fff;
+		font-weight: 900;
+		margin: 10px 0 0
+	}
+	.cFoot1 img{
+		height: 40px;
+	}
+	.cFoot2{
+		height: 500px; 
+	}
+	.cFoot2 h1{
+		font-size: 23px;
+		color: rgb(237, 28, 36);
+	}
+	.cFoot2 p{
+		font-family: "Lato",sans-serif;
+		font-size: 16px;
+		color: #000;
+		font-weight: 500;
+		margin: 16px 0;
+	}
+	.cFoot2 input[type="button"]{
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(237, 28, 36, 0.7); /* FF3.6+ */
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(237, 28, 36, 0.7); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(237, 28, 36, 0.7); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(237, 28, 36, 0.7); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(237, 28, 36, 0.7); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(237, 28, 36, 0.7); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(237, 28, 36, 0.7);); /* W3C */
+		border: 2px solid white;
+		border-radius: 10px;
+		color: white;
+		font-family: "Montserrat",sans-serif;
+		font-size: 16px;
+		font-weight: 900;
+		height: 60px;
+		width: 100%;
+		max-width: 340px;
+		margin-top: 60px;
+		box-shadow: 0 -5px 0 rgba(0,0,0,0.2) inset;
+		-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+		-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+	}
+	.cFoot2 input[type="button"]:active{
+		box-shadow: none;
+		background: rgba(237, 28, 36, 0.7); /* FF3.6+ */
+	}
+	.bgParallax{
+		background-attachment: fixed;
+	}
+
+	@media (min-width: 768px) { 
+		.cHeader h1{
+			font-size: 32px;
+			margin: 0;
+		}
+		.container1 {
+			height: 530px;
+		}
+		.container2{
+			height: 470px;
+		}
+		.margin_img{
+			margin: 0; 
+		}
+		.container1 .hum, .container2 .hum{
+			font-size: 38px; 
+		}
+		.container1 .hum_2, .container2 .hum_2{
+			font-size: 26px; 
+		}
+		.cFoot1 h3{
+			font-size: 17px;
+			margin: 0 0 0 5px;
+		}
+		.cFoot1 img{
+			height: 50px;
+		}
+		.cFoot2 h1{
+			font-size: 39px;
+		}
+	}
+	@media (min-width: 992px) { 
+		.cFoot1 h3{
+			font-size: 20px;
+			margin: 0 0 0 20px;
+		}
+		.cFoot1 img{
+			height: 60px;
+		}
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="parallax1" class="row bgParallax" data-speed="9"></div>
+
+<div class="row cHeader xs-vertical-align">
+	<div class="div_limiter">
+		<div class="col-xs-4 col-sm-2">
+			<img src="{{STATIC_URL}}/img/icon2_b.png">
+		</div>
+		<div class="col-xs-20 col-sm-22">
+			<h1>PHOTOGRAM</h1>
+		</div>
+	</div>
+</div>
+
+<div class="row container1 vertical-align">
+	<div class="div_limiter vertical-align">
+		<div class="col-sm-8 col-sm-push-16 text-center">
+			<img class="margin_img" src="{{STATIC_URL}}img/img2.png" >
+		</div>
+		<div class="col-sm-16 col-sm-pull-8">
+			<h1 class="hum">IMPRIMA FOTOS</h1>
+			<h1 class="hum_2">DIRETAMENTE DO INSTAGRAM</h1>
+
+			<p><b>Seus convidados adoram tirar fotos e publicar no Instagram? O que você acha de poder imprimir essas fotos para que eles levem como lembrança?</b></p>
+
+			<p>Com Photogram, isso é possível. Toda foto publicada no Instagram com a #hashtag de seu evento é capturada e processada por nosso sistema. Elas recebem uma moldura e são então impressas na hora</p>
+
+			<p class="margin-50-b-xs"><b>Para Casamentos, Formaturas, Festas de Aniversário, Confraternizações e Festas de 15 anos.</b></p>
+		</div>
+	</div>
+</div>
+
+<div id="parallax2" class="bgParallax" data-speed="9"></div>
+<div class="row container2 vertical-align">
+	<div class="div_limiter vertical-align">
+		<div class="col-sm-8 col-sm-push-16 text-center">
+			<img class="margin_img" src="{{STATIC_URL}}img/img2.png" >
+		</div>
+		<div class="col-sm-16 col-sm-pull-8">
+			<h1 class="hum">TRANSFORME SEU CELULAR</h1>
+			<h1 class="hum_2">EM UMA CÂMERA POLAROID</h1>
+
+			<p>Todas as fotos tiradas no Totem Photoplay já saem com uma moldura exclusiva de seu evento. Elas podem, então, ser impressas na hora e entregues para seus convidados levarem para casa.</p>
+
+			<p>As fotos também podem ser publicadas no Facebook em tempo real ou enviadas para seus convidados por e-mail.</p>
+		</div>		
+	</div>
+</div>
+<div class="row cFoot1 xs-vertical-align">
+	<div class="div_limiter">
+		<div class="col-md-7 col-xs-6 text-center vertical-align">
+			<img src="{{STATIC_URL}}img/classicon1_g.png">
+			<h3>+DIVERSÃO</h3>
+		</div>
+		<div class="col-md-9 col-xs-9 text-center vertical-align">
+			<img src="{{STATIC_URL}}img/classicon2_g.png">
+			<h3>+INTERATIVIDADE</h3>
+		</div>
+		<div class="col-md-8 col-xs-9 text-center vertical-align">
+			<img src="{{STATIC_URL}}img/classicon3_g.png">
+			<h3>+PERSONALIZAÇÃO</h3>
+		</div>
+	</div>
+</div>
+<div class="row div_limiter cFoot2 xs-vertical-align">
+	<div class="col-xs-24 text-center">
+		<h1 class="center-block" style="max-width: 710px;">TENHO INTERESSE EM TER O PHOTOPLAY EM MEU EVENTO!</h1>
+		<p>Uma atração surpreendente. Inove oferencendo interatividade e uma nova experiência.</p>
+		<a href="{% url 'Contato' %}"><input type="button" value="SOLICITAR ORÇAMENTO"></a>
+	</div>
+</div>
+{% endblock %}
