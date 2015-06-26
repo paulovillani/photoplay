@@ -136,27 +136,27 @@ def receber_lead(request):
 		nome = form['nome']
 		tel = form['tel']
 		email = form['email']
-		tipo = str(form['tipo'])
+		tipo = unicode(form['tipo'])
 		data = form['data']
 		estado = form['estado']
 		cidade = form['cidade']
-		como_conheceu = str(form['como_conheceu'])
+		como_conheceu = unicode(form['como_conheceu'])
 		codigo = form['codigo']
 
 		msg = u"Recebido:\n"
 		msg+= u"Nome: '"+nome+"'\n"
 		msg+= u"Telefone: '"+tel+"'\n"
 		msg+= u"Email: '"+email+"'\n"
-		msg+= "Tipo de evento: '"+tipo+"'\n"
+		msg+= u"Tipo de evento: '"+tipo+"'\n"
 		msg+= u"Data: '"+data+"'\n"
 		msg+= u"Estado: '"+estado+"'\n"
 		msg+= u"Cidade: '"+cidade+"'\n"
-		msg+= "Como conheceu: '"+como_conheceu+"'\n"
-		msg+= u"Codigo: '"+como_conheceu+"'\n"
+		msg+= u"Como conheceu: '"+como_conheceu+"'\n"
+		msg+= u"Código: ççç '"+como_conheceu+"'\n"
 
 		print msg
 
-		send_mail("Lead recebido", msg, 'noreply@photoplay.com.br', 
+		send_mail("Lead recebido", unicode(msg), 'noreply@photoplay.com.br', 
 		['paulo@photoplay.com.br', 'willian@fottorama.com.br'] )
 
 		return HttpResponse("200 ok")
