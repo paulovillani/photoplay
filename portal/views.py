@@ -8,6 +8,8 @@ from municipios.models import Municipio, UF
 from django.db.models import Q
 from portal.models import Contact, Budget, PodioConfig
 from pypodio2 import api
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 # Create your views here.
 
@@ -122,3 +124,36 @@ def enviar_contato(request):
         form = NameForm()
 
     return render(request, 'contato.html', {'contact_form': form})
+
+@csrf_exempt
+def receber_lead(request):
+    	# if this is a POST request we need to process the form data
+	if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+		form = json.loads(request.body)
+
+		nome = form['nome']
+		tel = form['tel']
+		email = form['email']
+		tipo = str(form['tipo'])
+		data = form['data']
+		estado = form['estado']
+		cidade = form['cidade']
+		como_conheceu = str(form['como_conheceu'])
+		codigo = form['codigo']
+
+		msg = u"Recebido:\n"
+		msg+= u"Nome: '"+nome+"'\n"
+		msg+= u"Telefone: '"+tel+"'\n"
+		msg+= u"Email: '"+email+"'\n"
+		msg+= "Tipo de evento: '"+tipo+"'\n"
+		msg+= u"Data: '"+data+"'\n"
+		msg+= u"Estado: '"+estado+"'\n"
+		msg+= u"Cidade: '"+cidade+"'\n"
+		msg+= "Como conheceu: '"+como_conheceu+"'\n"
+		msg+= u"Código: '"+como_conheceu+"'\n"
+
+		print msg
+
+		send_mail("Lead recebido", msg, 'noreply@photoplay.com.br', 
+		['paulo@photoplay.com.br', 'willian@fottorama.com.br'] )
