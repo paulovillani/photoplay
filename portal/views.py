@@ -10,6 +10,7 @@ from portal.models import Contact, Budget, PodioConfig
 from pypodio2 import api
 from django.views.decorators.csrf import csrf_exempt
 import json
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -157,3 +158,5 @@ def receber_lead(request):
 
 		send_mail("Lead recebido", msg, 'noreply@photoplay.com.br', 
 		['paulo@photoplay.com.br', 'willian@fottorama.com.br'] )
+
+		return HttpResponse("200 ok")
