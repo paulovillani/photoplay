@@ -151,7 +151,7 @@ def receber_lead(request):
 		msg+= u"Estado: '"+estado+"'\n"
 		msg+= u"Cidade: '"+cidade+"'\n"
 		msg+= "Como conheceu: '"+como_conheceu+"'\n"
-		msg+= u"Código: '"+como_conheceu+"'\n"
+		msg+= u"Codigo: '"+como_conheceu+"'\n"
 
 		print msg
 
