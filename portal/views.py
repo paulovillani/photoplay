@@ -153,9 +153,7 @@ def receber_lead(request):
 		msg+= u"Cidade: '"+cidade+"'\n"
 		msg+= u"Como conheceu: '"+como_conheceu+"'\n"
 		msg+= u"Código: ççç '"+como_conheceu+"'\n"
-
-		print msg
-
+		
 		send_mail("Lead recebido", unicode(msg), 'noreply@photoplay.com.br', 
 		['paulo@photoplay.com.br', 'willian@fottorama.com.br'] )
 
