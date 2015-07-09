@@ -1,5 +1,6 @@
 *.pyc
 *.pyo
 settings.py
+save_dump.sh
 media/
 #static/
