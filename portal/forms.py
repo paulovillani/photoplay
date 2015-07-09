@@ -23,6 +23,12 @@ class ContactForm(forms.Form):
             attrs={"placeholder": u"Seu nome (obrigatório)"}), 
 		required=True,
 	)
+	tel = forms.CharField(
+		label="",
+		widget=forms.TextInput(
+            attrs={"placeholder": u"Seu telefone (obrigatório)"}), 
+		required=True,
+	)
 	email = forms.EmailField(
 		label="",
 		widget=forms.TextInput(

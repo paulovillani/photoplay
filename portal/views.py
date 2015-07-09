@@ -54,6 +54,7 @@ def enviar_contato(request):
 			service_type = 	form.cleaned_data['service_type']
 			municipios = 	form.cleaned_data['municipios']
 			name = 			form.cleaned_data['name']
+			tel = 			form.cleaned_data['tel']
 			email = 		form.cleaned_data['email']
 			date_start = 	form.cleaned_data['date_start']
 			message = 		form.cleaned_data['message']
@@ -63,8 +64,19 @@ def enviar_contato(request):
 			cidade = a.nome
 			uf = a.uf.nome
 
-			msg = u"O usuário '"+name+"', email: "+email+", enviou um contato pelo site.\n"
-			msg+= u"Tipo de serviço: "+service_type+"\n"
+			msg = u"O usuário '"+name+"', email: "+email+", telefone: "+tel+", envi'ou um contato pelo site.\n"
+			msg+= u"Tipo de evento: "
+			if service_type == 1:
+				msg+="Casamento"
+			elif service_type == 2:
+				msg+="Aniversário"
+			elif service_type == 3:
+				msg+="Formatura"
+			elif service_type == 4:
+				msg+="Corporativo"
+			else:
+				msg+="Outro"
+			msg+="\n"
 			msg+= u"Cidade: "+cidade+", Estado: "+uf+"\n"
 			msg+= "Dia do evento: "+str(date_start)+"\n"
 			msg+= u"Mensagem: "+message
@@ -75,6 +87,7 @@ def enviar_contato(request):
 				contato = Contact(
 					name = name,
 					email = email,
+					tel = tel,
 					city = cidade,
 					state = a.uf.uf,
 				)
@@ -114,7 +127,7 @@ def enviar_contato(request):
 
 			# c.Item.create(int(podio.app_id), item)
 
-			send_mail("Contato pelo site", msg, 'noreply@photoplay.com.br', 
+			send_mail("Orçamento PhotoPlay", msg, 'noreply@photoplay.com.br', 
 				['equipe@photoplay.com.br', 'contato@photosite.webfactional.com'] )
 
 
@@ -136,25 +149,52 @@ def receber_lead(request):
 		nome = form['nome']
 		tel = form['tel']
 		email = form['email']
-		tipo = unicode(form['tipo'])
+		tipo = form['tipo']
 		data = form['data']
 		estado = form['estado']
 		cidade = form['cidade']
-		como_conheceu = unicode(form['como_conheceu'])
+		como_conheceu = form['como_conheceu']
 		codigo = form['codigo']
 
-		msg = u"Recebido:\n"
+		msg = u"Lead recebido pelo site do Fottorama:\n"
 		msg+= u"Nome: '"+nome+"'\n"
 		msg+= u"Telefone: '"+tel+"'\n"
 		msg+= u"Email: '"+email+"'\n"
 		msg+= u"Tipo de evento: '"+tipo+"'\n"
+		if tipo == 1:
+			msg+="Casamento\n"
+		elif tipo == 2:
+			msg+="Corporativo\n"
+		elif tipo == 3:
+			msg+="Aniversário\n"
+		elif tipo == 4:
+			msg+="Formatura\n"
+		elif tipo == 5:
+			msg+="Universitário\n"
+		else:
+			msg+="Outro\n"
+		
 		msg+= u"Data: '"+data+"'\n"
 		msg+= u"Estado: '"+estado+"'\n"
 		msg+= u"Cidade: '"+cidade+"'\n"
-		msg+= u"Como conheceu: '"+como_conheceu+"'\n"
-		msg+= u"Código: ççç '"+como_conheceu+"'\n"
-		
-		send_mail("Lead recebido", unicode(msg), 'noreply@photoplay.com.br', 
-		['paulo@photoplay.com.br', 'willian@fottorama.com.br'] )
+		msg+= u"Como conheceu: "
+		if como_conheceu == 1:
+			msg+="'Vi propaganda no Facebook'\n"
+		elif como_conheceu == 2:
+			msg+="'Busquei no Google'\n"
+		elif como_conheceu == 3:
+			msg+="'Em uma Feira de Noivas'\n"
+		elif como_conheceu == 7:
+			msg+="'Revista'\n"
+		elif como_conheceu == 4:
+			msg+="'Vi em um evento e gostei'\n"
+		elif como_conheceu == 5:
+			msg+="'Um amigo me recomendou'\n"
+		else:
+			msg+="'Por outro meio'\n"
+		msg+= u"Código Promocional: '"+codigo+"'\n"
+
+		send_mail("Orçamento PhotoPlay", unicode(msg), 'noreply@photoplay.com.br', 
+		['equipe@photoplay.com.br', 'contato@photosite.webfactional.com'] )
 
 		return HttpResponse("200 ok")
