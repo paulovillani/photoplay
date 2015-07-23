@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.utils import timezone
 
 EVENT_CHOICES = [
     ['1', 'Casamento'],
@@ -16,6 +17,7 @@ class Contact(models.Model):
 
     name = models.CharField(max_length=256, verbose_name=u"Nome")
     email = models.EmailField(max_length=128)
+    tel = models.CharField(max_length=32, verbose_name=u"Telefone")
     city = models.CharField(null=True, blank=True, max_length=128, verbose_name=u"Cidade")
     state = models.CharField(null=True, blank=True, max_length=2, verbose_name=u"Estado")
 
@@ -31,6 +33,7 @@ class Budget(models.Model):
     contact = models.ForeignKey(Contact, verbose_name=u"Contato")
     date = models.DateField(verbose_name=u"Data do evento")
     message = models.TextField(verbose_name=u"Mensagem")
+    date_created = models.DateField(verbose_name=u"Data do contato",  default=timezone.now)
 
     def __unicode__(self):
         return self.contact.name

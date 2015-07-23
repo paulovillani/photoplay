@@ -9,6 +9,7 @@ Contato
 <meta content="Entre em contato com a PhotoPlay e peça já um orçamento para o seu evento ficar ainda mais divertido." name="description">
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$.datepicker.regional['br'] = {
@@ -35,7 +36,23 @@ Contato
         $('#municipios_uf option:contains("--")').prop('disabled', true).text("Estado");
         $('#id_municipios option:contains("--")').prop('disabled', true).text("Cidade");
 
+        $("#id_tel").mask("(99) 9999?9-9999");
+
+
+		$("#id_tel").on("blur", function() {
+		    var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
+		    
+		    if( last.length == 3 ) {
+		        var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
+		        var lastfour = move + last;
+		        
+		        var first = $(this).val().substr( 0, 9 );
+		        
+		        $(this).val( first + '-' + lastfour );
+		    }
+		});
 	});
+	
 </script>
 <style type="text/css">
 	#header{
@@ -127,6 +144,17 @@ Contato
 		padding: 0px 0 0 20px;
 	}
 	#id_name{
+		border: 1px solid #b5b5b5;
+    	border-radius: 10px;
+   		color: #3a3a3a;
+    	font-family: "Lato",sans-serif;
+    	font-size: 14px;
+    	font-weight: 300;
+    	height: 50px;
+    	width: 97%;
+    	margin-top: 20px;
+	}
+	#id_tel{
 		border: 1px solid #b5b5b5;
     	border-radius: 10px;
    		color: #3a3a3a;
