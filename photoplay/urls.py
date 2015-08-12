@@ -13,4 +13,5 @@ urlpatterns = patterns('',
     url(r'^municipios_app/', include('municipios.urls')),
     url(r'^', include('portal.urls')),
     url(r'^', include('blog.urls')),
+    url(r'^', include('publicador.urls')),
 )
