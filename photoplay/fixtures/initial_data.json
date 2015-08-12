@@ -58251,6 +58251,42 @@
     }, 
     {
         "fields": {
+            "date_joined": "2015-08-12T15:57:23Z", 
+            "email": "paulo.villani@gmail.com", 
+            "first_name": "", 
+            "groups": [], 
+            "is_active": true, 
+            "is_staff": true, 
+            "is_superuser": true, 
+            "last_login": "2015-08-12T16:12:07Z", 
+            "last_name": "", 
+            "password": "pbkdf2_sha256$15000$1EiYWqGTrnNI$+t9xinaW7VHGW7m3v3Pimed6e4YQuq/NX61qqJ2gM98=", 
+            "user_permissions": [], 
+            "username": "paulo.villani@gmail.com"
+        }, 
+        "model": "auth.user", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "date_joined": "2015-08-12T16:09:23Z", 
+            "email": "", 
+            "first_name": "Paulo", 
+            "groups": [], 
+            "is_active": true, 
+            "is_staff": false, 
+            "is_superuser": false, 
+            "last_login": "2015-08-12T16:09:24Z", 
+            "last_name": "Belluci Villani", 
+            "password": "pbkdf2_sha256$15000$mYxkpKo60u9C$u0d1lUfAXXkxUuAMQZvjbZ+fLWVs4MUccGCkLkd0z5c=", 
+            "user_permissions": [], 
+            "username": "PauloBelluciVillani"
+        }, 
+        "model": "auth.user", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
             "authors": [
                 1
             ], 
