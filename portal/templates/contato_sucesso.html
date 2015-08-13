@@ -1,4 +1,4 @@
-{% extends 'portal_base.html' %}
+{% extends 'bootstrap.html' %}
 
 
 {% block title %}
@@ -10,7 +10,7 @@ Contato
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-        ga('send', 'event', 'contato', 'envio');
+        //ga('send', 'event', 'contato', 'envio');
 	});
 </script>
 <style type="text/css">
@@ -34,7 +34,7 @@ Contato
 		height: 200px;
 		width: 1400px;
 		position: relative;
-		background-image: url("{{STATIC_URL}}/img/parallax1_produtos.jpg");
+		background-image: url("{{STATIC_URL}}img/parallax1_produtos.jpg");
 	}
 	.cHeader{
 		background-color: rgb(80,184,72);
@@ -61,62 +61,9 @@ Contato
 		font-size: 32px;
 		margin: 0;
 	}
-	.cContato{
-		width: 1000px;
-		position: relative;
-		left: 50%;
-		margin-left: -500px;
-		overflow: auto;
-		overflow: hidden;
-		background-color: white;
-	}
-	.cContatoText{
-		float: right;
-		width: 470px;
-		margin-top: 120px
-	}
 	.cContato_img{
 		width:  370px;
 
-	}
-	.cContatoForm{
-		width: 480px;
-		float: left;
-		margin-top: 120px;
-	}
-	.cContatoForm>label[for=id_service_type_0]{
-		font-family: "Montserrat",sans-serif;
-		font-size: 20px;
-		color: #213f9a;
-		font-weight: 900;
-		}
-	.cContatoForm>label[for=id_name]{
-		font-family: "Montserrat",sans-serif;
-		font-size: 20px;
-		color: #213f9a;
-		font-weight: 900;	
-	}
-	.cContatoForm>label[for=id_municipios]{
-		font-family: "Montserrat",sans-serif;
-		font-size: 20px;
-		color: #213f9a;
-		font-weight: 900;	
-	}
-	.cContatoForm ul{
-		padding: 0;
-	}
-	.cContatoForm li{
-		font-family: "Lato",sans-serif;
-		font-size: 14px;
-		color: #3a3a3a;
-		font-weight: 300;
-		list-style: outside none none;
-	}
-	.cContatoForm textarea{
-		padding: 10px 0 0 20px;
-	}
-	.cContatoForm input{
-		padding: 0px 0 0 20px;
 	}
 	#id_name{
 		border: 1px solid #b5b5b5;
@@ -185,44 +132,34 @@ Contato
     	width: 330px !important;
     	margin: 20px 0;
 	}
-	.cContatoForm input[type="submit"]{
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))), rgba(80, 184, 72, 0.70); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* IE10+ */
-		background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%), rgba(80, 184, 72, 0.70); /* W3C */
-		border: 2px solid white;
-		border-radius: 10px;
-		color: white;
-		font-family: "Montserrat",sans-serif;
-		font-size: 16px;
-		font-weight: 900;
-		height: 60px;
-		width: 280px;
-		margin-top: 30px;
-		box-shadow: 0 -5px 0 rgba(0,0,0,0.2) inset;
-		-moz-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
-		-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.2) inset;
+	.margin_60{
+		margin: 60px 0;
+	}
+	.button_center-xs{
+		padding: 0;
+		margin: 0 auto;
+		display: block;
+	}
+	/* Small devices (tablets, 768px and up) */
+	@media (min-width: 768px) { 
+		form li>label{
+			margin: 0;
 		}
-	.cContatoForm input[type="submit"]:hover{
+		.button_center-xs{
+			margin: 0;
 		}
-	.cContatoForm input[type="submit"]:active{
-		box-shadow: none;
-		background: rgba(80, 184, 72, 0.70); /* FF3.6+ */
-		}
+	}
+
 </style>
 {% endblock %}
 
 {% block content %}
 
-<div id="parallax1" class="bgParallax" data-speed="9"></div>
-<div class="cContato"> 
-	<div style="text-align: center;">
+<div class="row div_limiter"> 
+	<div class="margin_60 col-xs-24" style="text-align: center;" >
 		<h1 style="font-size: 18px; font-weight: 700; margin-top: 60px; color: #213f9a;">Obrigado pelo contato, retornaremos em breve !</h1>
 	</div>
-	<div class="cContatoText">
+	<div class="margin_60 col-sm-12 col-sm-push-12 col-xs-24 ">
 		<h3 style="font-size: 28px; font-weight: 700; color: #213f9a;">DEIXE SEU EVENTO</h1>
 		<h3 style="font-size: 38px; font-weight: 700; color: #213f9a;">MAIS DIVERTIDO!</h1>
 
@@ -237,7 +174,7 @@ Contato
 		no  totem e das fotos publicadas no Instagram com a hashtag do seu evento.
 		</p>
 
-		<img src="{{STATIC_URL}}img/img7.png">
+		<img class="center-block" style="width:100%; max-width:462px;" src="{{STATIC_URL}}img/img7.png">
 	</div>
 </div>
 
